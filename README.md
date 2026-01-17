@@ -1,4 +1,4 @@
-# Narratives Around the Tunisian Revolution (RAG) By Safwen Gharbi CI3/MR2 2026
+# Narratives Around the Tunisian Revolution (RAG) By Safwen Gharbi CI3/MR2 2025-2026
 
 Streamlit + FastAPI app for searching and answering questions over a multilingual archive
 about the Tunisian Revolution. It ingests PDFs/HTML/TXT, builds a hybrid FAISS + BM25
