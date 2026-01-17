@@ -1,0 +1,1553 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.5.1",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this._interceptClickListeners(this),window.addEventListener("pageshow",e=>{this.persisted=e.persisted,this.everythingLoaded&&this._triggerLastFunctions()}),document.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!0),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!1),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._disableOtherEventListeners(e.target,!1),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_interceptClickListeners(e){EventTarget.prototype.addEventListenerBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(t,i,r){"click"!==t||e.windowLoaded||i===e.clickHandler||e.interceptedClickListeners.push({target:this,func:i,options:r}),(this||window).addEventListenerBase(t,i,r)}}_disableOtherEventListeners(e,t){this.interceptedClickListeners.forEach(i=>{i.target===e&&(t?e.removeEventListener("click",i.func,i.options):e.addEventListener("click",i.func,i.options))}),e.parentNode!==document.documentElement&&this._disableOtherEventListeners(e.parentNode,t)}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach(t=>{let i=t.getAttribute("data-rocket-src");if(i&&0!==i.indexOf("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{let r=new URL(i).origin;r!==location.origin&&e.push({src:r,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}catch(n){}}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._pendingWebpackRequests(this),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){if(await this._littleBreath(),!0===e.noModule&&"noModule"in HTMLScriptElement.prototype){e.setAttribute("data-rocket-status","skipped");return}return new Promise(t=>{let i;function r(){(i||e).setAttribute("data-rocket-status","executed"),t()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)i=document.createElement("script"),[...e.attributes].forEach(e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),"data-rocket-src"===t&&(t="src"),i.setAttribute(t,e.nodeValue))}),e.text&&(i.text=e.text),i.hasAttribute("src")?(i.addEventListener("load",r),i.addEventListener("error",function(){i.setAttribute("data-rocket-status","failed"),t()}),setTimeout(()=>{i.isConnected||t()},1)):(i.text=e.text,r()),e.parentNode.replaceChild(i,e);else{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",r),e.addEventListener("error",function(){e.setAttribute("data-rocket-status","failed"),t()}),s?(e.removeAttribute("data-rocket-src"),e.src=s):e.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(e.text)))}}catch(a){e.setAttribute("data-rocket-status","failed"),t()}})}async _loadScriptsFromList(e){let t=e.shift();return t&&t.isConnected?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(i,r){return t[r].eventsToRewrite.indexOf(i)>=0&&!e.everythingLoaded?"rocket-"+i:i}function r(e,r){var n;!t[n=e]&&(t[n]={originalFunctions:{add:n.addEventListener,remove:n.removeEventListener},eventsToRewrite:[]},n.addEventListener=function(){arguments[0]=i(arguments[0],n),t[n].originalFunctions.add.apply(n,arguments)},n.removeEventListener=function(){arguments[0]=i(arguments[0],n),t[n].originalFunctions.remove.apply(n,arguments)}),t[e].eventsToRewrite.push(r)}function n(t,i){let r=t[i];t[i]=null,Object.defineProperty(t,i,{get:()=>r||function(){},set(n){e.everythingLoaded?r=n:t["rocket"+i]=r=n}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t;function i(t){return e.everythingLoaded?t:t.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}function r(r){if(r&&r.fn&&!e.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(r)),r([])};let n=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let t=arguments[0][e];delete arguments[0][e],arguments[0][i(e)]=t})),n.apply(this,arguments),this},e.allJQueries.push(r)}t=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){r(e)}})}async _pendingWebpackRequests(e){let t=document.querySelector("script[data-webpack]");async function i(){return new Promise(e=>{t.addEventListener("load",e),t.addEventListener("error",e)})}t&&(await i(),await e._requestAnimFrame(),await e._pendingWebpackRequests(e))}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async _triggerWindowLoad(){await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}_triggerLastFunctions(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://webdo.tn/en/xmlrpc.php" />
+
+<!-- === 🧠 Preconnects stratégiques (Google, Ads, Analytics) === -->
+
+
+<link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin>
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+
+<!-- === 🧠 Google Ads / AdSense === -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7953964796411320" crossorigin="anonymous"></script>
+
+<!-- === 🖋️ Meta Discover / SEO === -->
+<meta name="robots" content="max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+
+<!-- === 🧩 Google Fonts optimisé (swap + pas de CLS) === -->
+
+
+<noscript></noscript>
+
+<link rel="preload" as="image" href="https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp" fetchpriority="high" importance="high">
+<!-- === 🎨 CSS essentiel (optimisation EN + noCLS) === -->
+<!--<style>
+body { font-family:'Roboto',sans-serif; margin:0; }
+header,nav,.jeg_viewport {display:block;}
+body.en .entry-title,
+body.en h1,
+body.en h2,
+body.en h3,
+body.en .jeg_post_title a,
+body.en .jeg_block_title,
+body.en .jeg_splitpost_bar .current_title {
+  color:#000; font-weight:400;
+  display:-webkit-box; -webkit-line-clamp:2;
+  -webkit-box-orient:vertical; overflow:hidden;
+}
+body.en .jeg_post_meta,
+body.en .jeg_meta_date a,
+body.en .jeg_meta_views a,
+body.en .jeg_modified_date a,
+body.en span.wpp-date {color:#000; font-weight:700;}
+body.en a.wpp-post-title {color:#0a0a0a;}
+body.en a.wpp-post-title:hover {color:#61c419;}
+body.en .jeg_footer_content a {color:#4a9710;}
+body.en .jeg_breakingnews_title {background:#000!important;}
+</style>-->
+
+<!-- === 🧩 Patch JS anti-erreurs console (Lodash / wp.data / React) === -->
+<script type="rocketlazyloadscript">
+(function(w){
+  if (typeof w._ === 'undefined') w._ = {};
+  Object.assign(w._, {
+    noop:function(){}, noConflict:function(){return this;},
+    memoize:function(fn){return fn;},
+    get:function(o,k){try{return k.split('.').reduce((a,b)=>a&&a[b],o);}catch(e){return undefined;}},
+    set:function(o,k,v){try{k.split('.').reduce((a,b,i,arr)=>a[b]=i===arr.length-1?v:(a[b]||{}),o);}catch(e){}},
+    cloneDeep:function(o){try{return JSON.parse(JSON.stringify(o));}catch(e){return o;}},
+    map:function(c,fn){if(!c)return[];let r=[];if(Array.isArray(c)){for(let i=0;i<c.length;i++)r.push(fn(c[i],i));}else{for(let k in c)if(c.hasOwnProperty(k))r.push(fn(c[k],k));}return r;},
+    forEach:function(c,fn){if(!c)return;if(Array.isArray(c)){for(let i=0;i<c.length;i++)fn(c[i],i);}else{for(let k in c)if(c.hasOwnProperty(k))fn(c[k],k);}},
+    debounce:function(fn){return fn;}, throttle:function(fn){return fn;}, defaultsDeep:function(o){return o;}
+  });
+
+  w.wp=w.wp||{};w.wp.data=w.wp.data||{};w.wp.data.plugins=w.wp.data.plugins||{};
+  if(!w.wp.data.plugins.persistence){
+    w.wp.data.plugins.persistence={use:function(){ return {}; }};
+  }
+
+  if(typeof w.React==='undefined'){w.React={createElement:function(){},useMemo:function(fn){return fn();},useState:function(v){return [v,()=>{}]}};}
+  if(typeof w.ReactDOM==='undefined'){w.ReactDOM={render:function(){},createRoot:function(){return{render:function(){}};}};}
+
+  console.log('%c[Webdo Patch JS] JS sécurisé','color:#4CAF50;font-weight:bold');
+})(window);
+</script>
+
+<!-- === 🔧 Polyfills JS === -->
+<script type="rocketlazyloadscript">
+if (!Array.prototype.flatMap) {
+  Array.prototype.flatMap = function(lambda) {
+    return Array.prototype.concat.apply([], this.map(lambda));
+  };
+}
+if (!Object.values) {
+  Object.values = obj => Object.keys(obj).map(k => obj[k]);
+}
+if (typeof _ !== 'undefined') {
+  _.isNil = function(v){return v===null||v===undefined;};
+}
+console.log('%c[Webdo Patch] Polyfills activés','color:#4CAF50;font-weight:bold');
+</script>
+
+<meta name='robots' content='noindex, nofollow' />
+<meta property="og:type" content="article">
+<meta property="og:title" content="The school that kills, three broken lives, a mourning country!">
+<meta property="og:site_name" content="webdo">
+<meta property="og:description" content="The drama that occurred in Mazzouna, where three high school students died after the collapse of a dilapidated wall, reveals">
+<meta property="og:url" content="https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp">
+<meta property="og:image:height" content="384">
+<meta property="og:image:width" content="720">
+<meta property="article:published_time" content="2025-04-15T09:08:00+00:00">
+<meta property="article:modified_time" content="2025-04-15T09:08:00+00:00">
+<meta property="article:section" content="National">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The school that kills, three broken lives, a mourning country!">
+<meta name="twitter:description" content="The drama that occurred in Mazzouna, where three high school students died after the collapse of a dilapidated wall, reveals">
+<meta name="twitter:url" content="https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/">
+<meta name="twitter:site" content="">
+<meta name="twitter:image:src" content="https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp">
+<meta name="twitter:image:width" content="720">
+<meta name="twitter:image:height" content="384">
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+              var jnews_ajax_url = '/en/?ajax-request=jnews'
+			</script>
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">;window.jnews=window.jnews||{},window.jnews.library=window.jnews.library||{},window.jnews.library=function(){"use strict";var t=this;t.win=window,t.doc=document,t.globalBody=t.doc.getElementsByTagName("body")[0],t.globalBody=t.globalBody?t.globalBody:t.doc,t.win.jnewsDataStorage=t.win.jnewsDataStorage||{_storage:new WeakMap,put:function(t,e,n){this._storage.has(t)||this._storage.set(t,new Map),this._storage.get(t).set(e,n)},get:function(t,e){return this._storage.get(t).get(e)},has:function(t,e){return this._storage.has(t)&&this._storage.get(t).has(e)},remove:function(t,e){var n=this._storage.get(t).delete(e);return 0===!this._storage.get(t).size&&this._storage.delete(t),n}},t.windowWidth=function(){return t.win.innerWidth||t.docEl.clientWidth||t.globalBody.clientWidth},t.windowHeight=function(){return t.win.innerHeight||t.docEl.clientHeight||t.globalBody.clientHeight},t.requestAnimationFrame=t.win.requestAnimationFrame||t.win.webkitRequestAnimationFrame||t.win.mozRequestAnimationFrame||t.win.msRequestAnimationFrame||window.oRequestAnimationFrame||function(t){return setTimeout(t,1e3/60)},t.cancelAnimationFrame=t.win.cancelAnimationFrame||t.win.webkitCancelAnimationFrame||t.win.webkitCancelRequestAnimationFrame||t.win.mozCancelAnimationFrame||t.win.msCancelRequestAnimationFrame||t.win.oCancelRequestAnimationFrame||function(t){clearTimeout(t)},t.classListSupport="classList"in document.createElement("_"),t.hasClass=t.classListSupport?function(t,e){return t.classList.contains(e)}:function(t,e){return t.className.indexOf(e)>=0},t.addClass=t.classListSupport?function(e,n){t.hasClass(e,n)||e.classList.add(n)}:function(e,n){t.hasClass(e,n)||(e.className+=" "+n)},t.removeClass=t.classListSupport?function(e,n){t.hasClass(e,n)&&e.classList.remove(n)}:function(e,n){t.hasClass(e,n)&&(e.className=e.className.replace(n,""))},t.objKeys=function(t){var e=[];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&e.push(n);return e},t.isObjectSame=function(t,e){var n=!0;return JSON.stringify(t)!==JSON.stringify(e)&&(n=!1),n},t.extend=function(){for(var t,e,n,i=arguments[0]||{},o=1,a=arguments.length;o<a;o++)if(null!==(t=arguments[o]))for(e in t)i!==(n=t[e])&&void 0!==n&&(i[e]=n);return i},t.dataStorage=t.win.jnewsDataStorage,t.isVisible=function(t){return 0!==t.offsetWidth&&0!==t.offsetHeight||t.getBoundingClientRect().length},t.getHeight=function(t){return t.offsetHeight||t.clientHeight||t.getBoundingClientRect().height},t.getWidth=function(t){return t.offsetWidth||t.clientWidth||t.getBoundingClientRect().width},t.supportsPassive=!1;try{var e=Object.defineProperty({},"passive",{get:function(){t.supportsPassive=!0}});"createEvent"in t.doc?t.win.addEventListener("test",null,e):"fireEvent"in t.doc&&t.win.attachEvent("test",null)}catch(t){}t.passiveOption=!!t.supportsPassive&&{passive:!0},t.addEvents=function(e,n,i){for(var o in n){var a=["touchstart","touchmove"].indexOf(o)>=0&&!i&&t.passiveOption;"createEvent"in t.doc?e.addEventListener(o,n[o],a):"fireEvent"in t.doc&&e.attachEvent("on"+o,n[o])}},t.removeEvents=function(e,n){for(var i in n)"createEvent"in t.doc?e.removeEventListener(i,n[i]):"fireEvent"in t.doc&&e.detachEvent("on"+i,n[i])},t.triggerEvents=function(e,n,i){var o;i=i||{detail:null};return"createEvent"in t.doc?(!(o=t.doc.createEvent("CustomEvent")||new CustomEvent(n)).initCustomEvent||o.initCustomEvent(n,!0,!1,i),void e.dispatchEvent(o)):"fireEvent"in t.doc?((o=t.doc.createEventObject()).eventType=n,void e.fireEvent("on"+o.eventType,o)):void 0},t.getParents=function(e,n){void 0===n&&(n=t.doc);for(var i=[],o=e.parentNode,a=!1;!a;)if(o){var s=o;s.querySelectorAll(n).length?a=!0:(i.push(s),o=s.parentNode)}else i=[],a=!0;return i},t.forEach=function(t,e,n){for(var i=0,o=t.length;i<o;i++)e.call(n,t[i],i)},t.getText=function(t){return t.innerText||t.textContent},t.setText=function(t,e){var n="object"==typeof e?e.innerText||e.textContent:e;t.innerText&&(t.innerText=n),t.textContent&&(t.textContent=n)},t.httpBuildQuery=function(e){return t.objKeys(e).reduce(function e(n){var i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:null;return function(o,a){var s=n[a];a=encodeURIComponent(a);var r=i?"".concat(i,"[").concat(a,"]"):a;return null==s||"function"==typeof s?(o.push("".concat(r,"=")),o):["number","boolean","string"].includes(typeof s)?(o.push("".concat(r,"=").concat(encodeURIComponent(s))),o):(o.push(t.objKeys(s).reduce(e(s,r),[]).join("&")),o)}}(e),[]).join("&")},t.scrollTo=function(e,n,i){function o(t,e,n){this.start=this.position(),this.change=t-this.start,this.currentTime=0,this.increment=20,this.duration=void 0===n?500:n,this.callback=e,this.finish=!1,this.animateScroll()}return Math.easeInOutQuad=function(t,e,n,i){return(t/=i/2)<1?n/2*t*t+e:-n/2*(--t*(t-2)-1)+e},o.prototype.stop=function(){this.finish=!0},o.prototype.move=function(e){t.doc.documentElement.scrollTop=e,t.globalBody.parentNode.scrollTop=e,t.globalBody.scrollTop=e},o.prototype.position=function(){return t.doc.documentElement.scrollTop||t.globalBody.parentNode.scrollTop||t.globalBody.scrollTop},o.prototype.animateScroll=function(){this.currentTime+=this.increment;var e=Math.easeInOutQuad(this.currentTime,this.start,this.change,this.duration);this.move(e),this.currentTime<this.duration&&!this.finish?t.requestAnimationFrame.call(t.win,this.animateScroll.bind(this)):this.callback&&"function"==typeof this.callback&&this.callback()},new o(e,n,i)},t.unwrap=function(e){var n,i=e;t.forEach(e,(function(t,e){n?n+=t:n=t})),i.replaceWith(n)},t.performance={start:function(t){performance.mark(t+"Start")},stop:function(t){performance.mark(t+"End"),performance.measure(t,t+"Start",t+"End")}},t.fps=function(){var e=0,n=0,i=0;!function(){var o=e=0,a=0,s=0,r=document.getElementById("fpsTable"),c=function(e){void 0===document.getElementsByTagName("body")[0]?t.requestAnimationFrame.call(t.win,(function(){c(e)})):document.getElementsByTagName("body")[0].appendChild(e)};null===r&&((r=document.createElement("div")).style.position="fixed",r.style.top="120px",r.style.left="10px",r.style.width="100px",r.style.height="20px",r.style.border="1px solid black",r.style.fontSize="11px",r.style.zIndex="100000",r.style.backgroundColor="white",r.id="fpsTable",c(r));var l=function(){i++,n=Date.now(),(a=(i/(s=(n-e)/1e3)).toPrecision(2))!=o&&(o=a,r.innerHTML=o+"fps"),1<s&&(e=n,i=0),t.requestAnimationFrame.call(t.win,l)};l()}()},t.instr=function(t,e){for(var n=0;n<e.length;n++)if(-1!==t.toLowerCase().indexOf(e[n].toLowerCase()))return!0},t.winLoad=function(e,n){function i(i){if("complete"===t.doc.readyState||"interactive"===t.doc.readyState)return!i||n?setTimeout(e,n||1):e(i),1}i()||t.addEvents(t.win,{load:i})},t.docReady=function(e,n){function i(i){if("complete"===t.doc.readyState||"interactive"===t.doc.readyState)return!i||n?setTimeout(e,n||1):e(i),1}i()||t.addEvents(t.doc,{DOMContentLoaded:i})},t.fireOnce=function(){t.docReady((function(){t.assets=t.assets||[],t.assets.length&&(t.boot(),t.load_assets())}),50)},t.boot=function(){t.length&&t.doc.querySelectorAll("style[media]").forEach((function(t){"not all"==t.getAttribute("media")&&t.removeAttribute("media")}))},t.create_js=function(e,n){var i=t.doc.createElement("script");switch(i.setAttribute("src",e),n){case"defer":i.setAttribute("defer",!0);break;case"async":i.setAttribute("async",!0);break;case"deferasync":i.setAttribute("defer",!0),i.setAttribute("async",!0)}t.globalBody.appendChild(i)},t.load_assets=function(){"object"==typeof t.assets&&t.forEach(t.assets.slice(0),(function(e,n){var i="";e.defer&&(i+="defer"),e.async&&(i+="async"),t.create_js(e.url,i);var o=t.assets.indexOf(e);o>-1&&t.assets.splice(o,1)})),t.assets=jnewsoption.au_scripts=window.jnewsads=[]},t.docReady((function(){t.globalBody=t.globalBody==t.doc?t.doc.getElementsByTagName("body")[0]:t.globalBody,t.globalBody=t.globalBody?t.globalBody:t.doc}))},window.jnews.library=new window.jnews.library;</script>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v25.3 (Yoast SEO v26.5) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>The school that kills, three broken lives, a mourning country! - webdo</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3Aregular%2C500%2C700%2Cregular&#038;display=swap" /><style type="text/css">@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/greek/500/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/500/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/500/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/500/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:500;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/500/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3Aregular%2C500%2C700%2Cregular&#038;display=swap" /></noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&#038;display=swap" /><style type="text/css">@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:400;src:url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek/700/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:700;src:url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}</style><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&#038;display=swap" /></noscript>
+	<meta name="description" content="%" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="The school that kills, three broken lives, a mourning country! - webdo" />
+	<meta property="og:description" content="%" />
+	<meta property="og:url" content="https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/" />
+	<meta property="og:site_name" content="webdo" />
+	<meta property="article:published_time" content="2025-04-15T09:08:00+00:00" />
+	<meta property="og:image" content="https://webdo.tn/en/wp-content/uploads/2025/06/FireShot-Capture-1063-webdo_default-53-750x375.jpg-750×375-www.webdo_.tn_.png" />
+	<meta property="og:image:width" content="746" />
+	<meta property="og:image:height" content="371" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="author" content="Webdo" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Webdo" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/","url":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/","name":"The school that kills, three broken lives, a mourning country! - webdo","isPartOf":{"@id":"https://webdo.tn/en/#website"},"primaryImageOfPage":{"@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/#primaryimage"},"image":{"@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/#primaryimage"},"thumbnailUrl":"https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp","datePublished":"2025-04-15T09:08:00+00:00","author":{"@id":"https://webdo.tn/en/#/schema/person/840627cea84f5e52ed687c6d7bd2fd1c"},"description":"%","breadcrumb":{"@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/#primaryimage","url":"https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp","contentUrl":"https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp","width":720,"height":384},{"@type":"BreadcrumbList","@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://webdo.tn/en/"},{"@type":"ListItem","position":2,"name":"actualites","item":"https://webdo.tn/en/actualites/"},{"@type":"ListItem","position":3,"name":"The school that kills, three broken lives, a mourning country!"}]},{"@type":"WebSite","@id":"https://webdo.tn/en/#website","url":"https://webdo.tn/en/","name":"webdo","description":"Tunisie - News en Tunisie et à l&#039;international sur Webdo.tn","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://webdo.tn/en/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://webdo.tn/en/#/schema/person/840627cea84f5e52ed687c6d7bd2fd1c","name":"Webdo","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://webdo.tn/en/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/de97aeec1bb80978a9dbb127e47dfc88aaacb2f3c29aac907d8d3222e3495d49?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/de97aeec1bb80978a9dbb127e47dfc88aaacb2f3c29aac907d8d3222e3495d49?s=96&d=mm&r=g","caption":"Webdo"},"url":"https://webdo.tn/en/actualite/author/webdo/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+
+<link rel="alternate" type="application/rss+xml" title="webdo &raquo; Feed" href="https://webdo.tn/en/feed/" />
+<script type="text/javascript" id="wpp-js" src="https://webdo.tn/en/wp-content/plugins/wordpress-popular-posts/assets/js/wpp.min.js?ver=7.3.6" data-sampling="0" data-sampling-rate="100" data-api-url="https://webdo.tn/en/wp-json/wordpress-popular-posts" data-post-id="395325" data-token="fdd50f4a84" data-lang="0" data-debug="0"></script>
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://webdo.tn/en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwebdo.tn%2Fen%2Factualite%2Fnational%2Fthe-school-that-kills-three-broken-lives-a-mourning-country%2F395325%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://webdo.tn/en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwebdo.tn%2Fen%2Factualite%2Fnational%2Fthe-school-that-kills-three-broken-lives-a-mourning-country%2F395325%2F&#038;format=xml" />
+<style>
+        @font-face { font-family:"FontAwesome"; font-display:swap; }
+        @font-face { font-family:"Jegicon"; font-display:swap; }
+    </style><style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link data-minify="1" rel='stylesheet' id='wp-automatic-css' href='https://webdo.tn/en/wp-content/cache/background-css/webdo.tn/en/wp-content/cache/min/1/en/wp-content/plugins/wp-automatic-plugin-for-wordpress/css/admin-dashboard.css?ver=1765353474&wpr_t=1768509162' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wp-automatic-gallery-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/plugins/wp-automatic-plugin-for-wordpress/css/wp-automatic.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wordpress-popular-posts-css-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/plugins/wordpress-popular-posts/assets/css/wpp.css?ver=1765353474' type='text/css' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='webdoslide-frontend-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/plugins/webdo-slide-itrend/assets/css/frontend.css?ver=1765353474' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://webdo.tn/en/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' type='text/css' media='all' />
+<link rel='preload' as='font' type='font/woff2' crossorigin id='font-awesome-webfont-css' href='https://webdo.tn/en/wp-content/themes/webdo/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0' type='text/css' media='all' />
+<link rel='preload' as='font' type='font/woff' crossorigin id='jnews-icon-webfont-css' href='https://webdo.tn/en/wp-content/themes/webdo/assets/fonts/jegicon/fonts/jegicon.woff' type='text/css' media='all' />
+<link rel='preload' as='font' type='font/woff2' crossorigin id='vc-font-awesome-brands-webfont-css' href='https://webdo.tn/en/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/webfonts/fa-brands-400.woff2' type='text/css' media='all' />
+<link rel='preload' as='font' type='font/woff2' crossorigin id='vc-font-awesome-regular-webfont-css' href='https://webdo.tn/en/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/webfonts/fa-regular-400.woff2' type='text/css' media='all' />
+<link rel='preload' as='font' type='font/woff2' crossorigin id='vc-font-awesome-solid-webfont-css' href='https://webdo.tn/en/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/webfonts/fa-solid-900.woff2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/fonts/font-awesome/font-awesome.min.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-icon-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/fonts/jegicon/jegicon.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jscrollpane-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/jquery.jscrollpane.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='oknav-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/okayNav.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='chosen-css' href='https://webdo.tn/en/wp-content/cache/background-css/webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/chosen/chosen.css?ver=1765353474&wpr_t=1768509162' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-main-css' href='https://webdo.tn/en/wp-content/cache/background-css/webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/main.css?ver=1765353474&wpr_t=1768509162' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-pages-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/pages.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-single-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/single.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-responsive-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/responsive.css?ver=1765353474' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='jnews-pb-temp-css' href='https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/css/pb-temp.css?ver=1765353474' type='text/css' media='all' />
+<link rel='stylesheet' id='jnews-style-css' href='https://webdo.tn/en/wp-content/themes/webdo/style.css?ver=10.1.0' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:var(--wpr-bg-a78b0213-cefd-48a6-9d8c-1468fa5c1c98) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+
+//# sourceURL=addtoany-core-js-before
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer data-rocket-src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" defer data-rocket-src="https://webdo.tn/en/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/plugins/wp-automatic-plugin-for-wordpress/js/custom-front.js?ver=1765353474" id="wp-automatic-js" defer></script>
+    <script type="rocketlazyloadscript">
+    window.lazySizesConfig = window.lazySizesConfig || {};
+    lazySizesConfig.expand = 300;
+    lazySizesConfig.expFactor = 1.3;
+    lazySizesConfig.hFac = 0.6;
+    lazySizesConfig.loadMode = 1;
+
+    // Empêcher lazySizes de toucher à l’image LCP (webdo-lcp)
+    document.addEventListener('lazybeforeunveil', function(e){
+        if (e.target.classList.contains('webdo-lcp')) {
+            e.stopPropagation();
+        }
+    }, true);
+    </script>
+    <link rel="https://api.w.org/" href="https://webdo.tn/en/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://webdo.tn/en/wp-json/wp/v2/posts/395325" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://webdo.tn/en/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9" />
+<link rel='shortlink' href='https://webdo.tn/en/?p=395325' />
+            <style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-block-placeholder,.wpp-shortcode-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+            <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"The school that kills, three broken lives, a mourning country!","image":"https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp","datePublished":"2025-04-15T10:08:00+01:00","dateModified":"2025-04-15T10:08:00+01:00","author":{"@type":"Organization","name":"Webdo Editorial Team"},"publisher":{"@type":"Organization","name":"Webdo.tn","logo":{"@type":"ImageObject","url":"https://www.webdo.tn/wp-content/uploads/2024/12/logo-webdo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/"},"articleSection":"National","inLanguage":"en","isBasedOn":{"@type":"CreativeWork","@id":"https://webdo.tn/fr/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/"}}</script><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","@id":"https:\/\/webdo.tn\/en\/#organization","url":"https:\/\/webdo.tn\/en\/","name":"","logo":{"@type":"ImageObject","url":""},"sameAs":["https:\/\/www.facebook.com\/webdo.tn","https:\/\/x.com\/webdo_tn","https:\/\/www.youtube.com\/@webdoofficiel","https:\/\/webdo.tn\/en\/rss"]}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"https:\/\/webdo.tn\/en\/#website","url":"https:\/\/webdo.tn\/en\/","name":"","potentialAction":{"@type":"SearchAction","target":"https:\/\/webdo.tn\/en\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="icon" href="https://webdo.tn/en/wp-content/uploads/2025/05/cropped-logo-center-small-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://webdo.tn/en/wp-content/uploads/2025/05/cropped-logo-center-small-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://webdo.tn/en/wp-content/uploads/2025/05/cropped-logo-center-small-180x180.png" />
+<meta name="msapplication-TileImage" content="https://webdo.tn/en/wp-content/uploads/2025/05/cropped-logo-center-small-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			#selectShareContainer {
+  display: none;
+}
+#breadcrumbs .breadcrumb_last_link a {
+    color: #000000;
+}
+a.wpp-post-title {
+    color: #000;
+}
+.jeg_meta_date a, .jeg_meta_views a, .jeg_modified_date a, .jeg_footer .jeg_footer_heading h3 {
+	color:#000 !important;
+}
+.tnp-widget input.tnp-submit {
+	background-color:#000 !important;
+}
+.jeg_meta_author a, .jeg_meta_author span  {
+	color:#000;
+}
+div#comments span {
+    background: #000;
+}
+
+
+.jeg_post_category {
+    display: none;
+}
+.jeg_footer .socials_widget:not(.nobg) .fa {
+	color:#000000;
+}
+
+.jeg_footer_content a {
+	color: #4a9710;
+}
+.jeg_breakingnews_title {
+    background: #000 !important;
+}
+.authorlink, .alert-error,.jeg_tabpost_nav li:last-child,  {
+	    display: none !important;
+}
+
+.nc_wrapper.swp_floating_horizontal_wrapper.bottom {
+    display: none !important;
+}
+.jeg_tabpost_nav li {
+	width:100%;
+}
+.footer_logo img {width:200px;}
+.jeg_logo img {
+    width: 275px;
+}
+.jeg_footer.dark .jeg_footer_heading h3, .jeg_footer .footer_dark .jeg_footer_heading h3, .jeg_footer .footer_dark .widget h2, .jeg_footer .jeg_footer_heading h3, .jeg_footer .widget h2
+ {
+    color: #61c419;
+}
+
+
+div.jeg_block_container > div.jeg_posts_wrap > div > article > div.jeg_postblock_content > h3 > a{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.jeg_slider_thumbnail_wrapper {
+    display: none;
+}
+
+
+.jeg_post_title, .entry-header .jeg_post_title, .jeg_single_tpl_2 .entry-header .jeg_post_title, .jeg_single_tpl_3 .entry-header .jeg_post_title, .jeg_single_tpl_6 .entry-header .jeg_post_title, .jeg_content .jeg_custom_title_wrapper .jeg_post_title, h1, h2, h3, h4, h5, h6, .jeg_post_title a, .entry-header .jeg_post_title, .jeg_hero_style_7 .jeg_post_title a, .jeg_block_title, .jeg_splitpost_bar .current_title, .jeg_video_playlist_title, .gallery-caption, .jeg_push_notification_button>a.button {
+	font-weight:400;
+}
+
+.tnp-widget input.tnp-submit {
+    background-color: #61c419;
+}
+.jeg_pl_sm {
+	margin-bottom:8px;
+}
+
+.logo_menu_side_bar {
+  display: block;
+  margin: 0 auto;
+}
+
+.perfecty-push-settings-container #perfecty-push-settings-open svg {
+    color: #ffffff;
+    padding: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #61c419;
+    transition: padding .1s ease-in-out;
+    cursor: pointer;
+    fill: #fff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.perfecty-push-dialog-container .perfecty-push-dialog-form #perfecty-push-dialog-cancel {
+    background-color: #ffffff;
+    color: #61c419;
+}
+
+.perfecty-push-dialog-container .perfecty-push-dialog-form #perfecty-push-dialog-subscribe {
+    background-color: #61c419;
+    color: #ffffff;
+}
+
+.jeg_sharelist {
+	width: 40%;
+}
+a.jeg_btn-google-plus.removed {
+    display: none;
+}
+
+.tagcloud a:nth-child(n+20) {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+	.jeg_post_category {
+		display:none;
+	}
+	.single-post article.jeg_post > div > a > .thumbnail-container {
+  display: none !important; 
+}
+	.single-post article.jeg_post > div >  .jeg_post_title {
+ font-size:16px; 
+}
+	.single-post .wpp-list > li > a > img {
+ display: none;
+}
+
+	#jnews_module_block_5-2 > div > div.jeg_block_container > div.jeg_posts.jeg_load_more_flag > article > div.jeg_thumb > div {
+		display:block;
+	}
+}
+
+.jeg_mobile_logo img {
+	max-height: 65px;
+}
+iframe.fb_iframe_widget_lift {
+    width: 100% !important;
+}
+
+
+@media screen and (max-width: 768px) {
+.ads_code_bannier {
+    height: 110px !important;
+        transform: scale(0.35) !important;
+        transform-origin: top left !important;
+        display: block !important;
+        border: none !important;
+}}
+
+
+
+
+
+
+#jnews_popular-3 > ul > li > div > .jeg_socialshare {
+    display:none;
+} 
+
+.popularpost_item {
+	margin-bottom:40px;
+}
+
+
+div#simple_sync_metabox {
+    display: none !improtant;
+}
+
+body > div.jeg_viewport > div.post-wrapper > div.post-wrap > div.jeg_main > div > div > div > div.row > div.jeg_main_content.col-md-8 > div > div.entry-content.with-share > div.content-inner > div > div > figure > img:nth-child(2)
+{
+    display:none;
+}
+
+blockquote.wp-block-quote.is-layout-flow.wp-block-quote-is-layout-flow {
+    display: none;
+}		</style>
+		<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+<!-- === 🔐 Consent Mode Premium (RGPD EU + Full Ads non-EU) === -->
+<script type="rocketlazyloadscript">
+window.dataLayer = window.dataLayer || [];
+window.gtag = function(){ dataLayer.push(arguments); };
+
+gtag('consent', 'default', {
+  'analytics_storage': 'granted',
+  'security_storage': 'granted',
+  'ad_storage': 'denied',
+  'personalization_storage': 'denied',
+  'functionality_storage': 'granted'
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  fetch("https://api.country.is/")
+    .then(r => r.json())
+    .then(d => {
+
+      const eu = [
+        "FR","BE","DE","IT","ES","NL","AT","IE","LU",
+        "SE","FI","PT","GR","CY","MT","SI","SK","CZ",
+        "PL","HU","HR","RO","BG","EE","LV","LT","DK"
+      ];
+
+      if (!eu.includes(d.country)) {
+        gtag('consent','update', {
+          'ad_storage':'granted',
+          'personalization_storage':'granted'
+        });
+        console.log('%c[Webdo EN Consent] Ads activées automatiquement pour '+d.country,'color:#00c853;font-weight:bold');
+        return;
+      }
+
+      const box = document.createElement('div');
+      box.innerHTML = `
+        <div id="consent-banner" style="
+          position:fixed;bottom:0;left:0;right:0;z-index:99999;
+          background:rgba(0,0,0,0.85);color:#fff;font-size:14px;
+          padding:12px;text-align:center;">
+          This website uses cookies for measurement and improvement.
+          <button id="accept-consent" style="background:#00c853;color:#fff;
+          border:none;padding:8px 14px;margin-left:8px;border-radius:4px;
+          cursor:pointer;">OK</button>
+        </div>`;
+      document.body.appendChild(box);
+
+      document.getElementById('accept-consent').onclick = function(){
+        gtag('consent','update',{
+          'ad_storage':'granted',
+          'personalization_storage':'granted'
+        });
+        box.remove();
+      };
+    });
+});
+</script>
+
+<!-- === 🪧 Google Publisher Tags (Ads) === -->
+<script type="rocketlazyloadscript" data-minify="1" async data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/tag/js/gpt.js?ver=1765353474" fetchpriority="low"></script>
+<script type="rocketlazyloadscript">
+window.googletag = window.googletag || {cmd: []};
+function defineAds() {
+    const slots = [
+        { name:'/45663897/Mega', sizes:[[1000,300],[728,90],[728,300],[1000,90]], id:'div-gpt-ad-1749056308705-0' },
+        { name:'/45663897/pave300x600', sizes:[[300,600]], id:'div-gpt-ad-1757088629715-0' },
+        { name:'/45663897/Interne_Pave', sizes:[[300,300],[300,600],[250,250],[300,450],[300,250]], id:'div-gpt-ad-1749062657026-0' },
+        { name:'/45663897/Home_Pave', sizes:[[250,250],[300,250],[300,300],[300,450],[300,600]], id:'div-gpt-ad-1749062829262-0' },
+        { name:'/45663897/Interne_Pave_M', sizes:[[300,450],[300,300],[300,600],[250,250],[300,250]], id:'div-gpt-ad-1749063136323-0' },
+        { name:'/45663897/Interne_Pave_M', sizes:[[300,250],[250,250],[300,300],[300,450],[300,600]], id:'div-gpt-ad-1749145564663-0' }
+    ];
+  slots.forEach(s => googletag.defineSlot(s.name, s.sizes, s.id).addService(googletag.pubads()));
+  googletag.pubads().collapseEmptyDivs(true);
+  googletag.pubads().enableSingleRequest();
+  googletag.enableServices();
+}
+googletag.cmd.push(defineAds);
+</script>
+
+<!-- === 🧩 GTM Proxy ultra rapide (/lvlr/) === -->
+<script type="rocketlazyloadscript">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'gtm.start': new Date().getTime(),
+  event: 'gtm.js',
+  'webdo.lcpPrefetch': true,
+  'webdo.instantPageView': true
+});
+(function(w,d,s,l,i){
+  var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s);
+  j.async = true;
+  j.src = '/lvlr/?id=' + i;
+  j.setAttribute('fetchpriority','low');
+  j.setAttribute('importance','low');
+  f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NWP66LW');
+</script>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle">i.icon-google-places:before,i.icon-bing:before{--wpr-bg-82acfc02-296a-45c1-a270-4e44a0dcb0ad: url('https://webdo.tn/en/en/wp-content/plugins/wp-automatic-plugin-for-wordpress/images/places.png');}i.icon-bing:before{--wpr-bg-a66089bb-10c7-4d14-a3e9-14ca926734ea: url('https://webdo.tn/en/en/wp-content/plugins/wp-automatic-plugin-for-wordpress/images/bing.png');}.chosen-container-single .chosen-single abbr{--wpr-bg-63eec5fa-485a-458f-8663-8be2f6f7da66: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/css/chosen/chosen-sprite.png');}.chosen-container-multi .chosen-choices li.search-choice .search-choice-close{--wpr-bg-e384bef8-168a-4961-ab44-37a05eb32dd4: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/css/chosen/chosen-sprite.png');}.chosen-rtl .chosen-search input[type=text]{--wpr-bg-86abf838-1cfa-4b20-b96f-e451dbd2aaa6: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/css/chosen/chosen-sprite.png');}.chosen-container .chosen-results-scroll-down span,.chosen-container .chosen-results-scroll-up span,.chosen-container-multi .chosen-choices .search-choice .search-choice-close,.chosen-container-single .chosen-search input[type=text],.chosen-container-single .chosen-single abbr,.chosen-container-single .chosen-single div b,.chosen-rtl .chosen-search input[type=text]{--wpr-bg-a60a8fc3-fadf-4253-a429-a82fcf5e4555: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/css/chosen/chosen-sprite@2x.png');}.thumbnail-container:after{--wpr-bg-2da9f311-50d6-42bb-bd5f-c3c4ebb89514: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/preloader.gif');}.jeg_socialcounter.light .jeg_tiktok .fa:before{--wpr-bg-0839a35f-23e4-4eab-9630-3b2fa13b3c6e: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/tiktok-light.png');}.jeg_socialcounter.colored .jeg_tiktok .fa:before{--wpr-bg-d4bca557-8939-47ef-983a-de5a7580a8a0: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/tiktok-colored.png');}.jeg_socialcounter.col1.light .jeg_tiktok .fa:before{--wpr-bg-e6237c9b-36be-44ce-ba92-1b4ffe33784b: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/tiktok-light-small.png');}.jeg_socialcounter.col1.colored .jeg_tiktok .fa:before{--wpr-bg-b2782a9a-22ed-415b-8ebf-3ad1d2046cf7: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/tiktok-colored-small.png');}#wpwrap #wp-admin-bar-jnews .ab-icon:before{--wpr-bg-38c70c54-7594-4778-8949-a4d0f0ae3a34: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/dashboard.png');}.jeg_share_button .jeg_btn-hatena .fa{--wpr-bg-ca03949c-1dcf-4e14-a796-319477d502b4: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/hatena-share.png');}.jeg_share_button .jeg_btn-line .fa{--wpr-bg-4f5bf001-1efa-480f-b2cb-458c304d764f: url('https://webdo.tn/en/en/wp-content/themes/webdo/assets/img/line-share.png');}.rll-youtube-player .play{--wpr-bg-a78b0213-cefd-48a6-9d8c-1468fa5c1c98: url('https://webdo.tn/en/wp-content/plugins/wp-rocket/assets/img/youtube.png');}</style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = [{"selector":"i.icon-google-places,i.icon-bing","style":"i.icon-google-places:before,i.icon-bing:before{--wpr-bg-82acfc02-296a-45c1-a270-4e44a0dcb0ad: url('https:\/\/webdo.tn\/en\/en\/wp-content\/plugins\/wp-automatic-plugin-for-wordpress\/images\/places.png');}","hash":"82acfc02-296a-45c1-a270-4e44a0dcb0ad","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/plugins\/wp-automatic-plugin-for-wordpress\/images\/places.png"},{"selector":"i.icon-bing","style":"i.icon-bing:before{--wpr-bg-a66089bb-10c7-4d14-a3e9-14ca926734ea: url('https:\/\/webdo.tn\/en\/en\/wp-content\/plugins\/wp-automatic-plugin-for-wordpress\/images\/bing.png');}","hash":"a66089bb-10c7-4d14-a3e9-14ca926734ea","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/plugins\/wp-automatic-plugin-for-wordpress\/images\/bing.png"},{"selector":".chosen-container-single .chosen-single abbr","style":".chosen-container-single .chosen-single abbr{--wpr-bg-63eec5fa-485a-458f-8663-8be2f6f7da66: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite.png');}","hash":"63eec5fa-485a-458f-8663-8be2f6f7da66","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite.png"},{"selector":".chosen-container-multi .chosen-choices li.search-choice .search-choice-close","style":".chosen-container-multi .chosen-choices li.search-choice .search-choice-close{--wpr-bg-e384bef8-168a-4961-ab44-37a05eb32dd4: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite.png');}","hash":"e384bef8-168a-4961-ab44-37a05eb32dd4","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite.png"},{"selector":".chosen-rtl .chosen-search input[type=text]","style":".chosen-rtl .chosen-search input[type=text]{--wpr-bg-86abf838-1cfa-4b20-b96f-e451dbd2aaa6: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite.png');}","hash":"86abf838-1cfa-4b20-b96f-e451dbd2aaa6","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite.png"},{"selector":".chosen-container .chosen-results-scroll-down span,.chosen-container .chosen-results-scroll-up span,.chosen-container-multi .chosen-choices .search-choice .search-choice-close,.chosen-container-single .chosen-search input[type=text],.chosen-container-single .chosen-single abbr,.chosen-container-single .chosen-single div b,.chosen-rtl .chosen-search input[type=text]","style":".chosen-container .chosen-results-scroll-down span,.chosen-container .chosen-results-scroll-up span,.chosen-container-multi .chosen-choices .search-choice .search-choice-close,.chosen-container-single .chosen-search input[type=text],.chosen-container-single .chosen-single abbr,.chosen-container-single .chosen-single div b,.chosen-rtl .chosen-search input[type=text]{--wpr-bg-a60a8fc3-fadf-4253-a429-a82fcf5e4555: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite@2x.png');}","hash":"a60a8fc3-fadf-4253-a429-a82fcf5e4555","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/css\/chosen\/chosen-sprite@2x.png"},{"selector":".thumbnail-container","style":".thumbnail-container:after{--wpr-bg-2da9f311-50d6-42bb-bd5f-c3c4ebb89514: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/preloader.gif');}","hash":"2da9f311-50d6-42bb-bd5f-c3c4ebb89514","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/preloader.gif"},{"selector":".jeg_socialcounter.light .jeg_tiktok .fa","style":".jeg_socialcounter.light .jeg_tiktok .fa:before{--wpr-bg-0839a35f-23e4-4eab-9630-3b2fa13b3c6e: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-light.png');}","hash":"0839a35f-23e4-4eab-9630-3b2fa13b3c6e","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-light.png"},{"selector":".jeg_socialcounter.colored .jeg_tiktok .fa","style":".jeg_socialcounter.colored .jeg_tiktok .fa:before{--wpr-bg-d4bca557-8939-47ef-983a-de5a7580a8a0: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-colored.png');}","hash":"d4bca557-8939-47ef-983a-de5a7580a8a0","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-colored.png"},{"selector":".jeg_socialcounter.col1.light .jeg_tiktok .fa","style":".jeg_socialcounter.col1.light .jeg_tiktok .fa:before{--wpr-bg-e6237c9b-36be-44ce-ba92-1b4ffe33784b: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-light-small.png');}","hash":"e6237c9b-36be-44ce-ba92-1b4ffe33784b","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-light-small.png"},{"selector":".jeg_socialcounter.col1.colored .jeg_tiktok .fa","style":".jeg_socialcounter.col1.colored .jeg_tiktok .fa:before{--wpr-bg-b2782a9a-22ed-415b-8ebf-3ad1d2046cf7: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-colored-small.png');}","hash":"b2782a9a-22ed-415b-8ebf-3ad1d2046cf7","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/tiktok-colored-small.png"},{"selector":"#wpwrap #wp-admin-bar-jnews .ab-icon","style":"#wpwrap #wp-admin-bar-jnews .ab-icon:before{--wpr-bg-38c70c54-7594-4778-8949-a4d0f0ae3a34: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/dashboard.png');}","hash":"38c70c54-7594-4778-8949-a4d0f0ae3a34","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/dashboard.png"},{"selector":".jeg_share_button .jeg_btn-hatena .fa","style":".jeg_share_button .jeg_btn-hatena .fa{--wpr-bg-ca03949c-1dcf-4e14-a796-319477d502b4: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/hatena-share.png');}","hash":"ca03949c-1dcf-4e14-a796-319477d502b4","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/hatena-share.png"},{"selector":".jeg_share_button .jeg_btn-line .fa","style":".jeg_share_button .jeg_btn-line .fa{--wpr-bg-4f5bf001-1efa-480f-b2cb-458c304d764f: url('https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/line-share.png');}","hash":"4f5bf001-1efa-480f-b2cb-458c304d764f","url":"https:\/\/webdo.tn\/en\/en\/wp-content\/themes\/webdo\/assets\/img\/line-share.png"},{"selector":".rll-youtube-player .play","style":".rll-youtube-player .play{--wpr-bg-a78b0213-cefd-48a6-9d8c-1468fa5c1c98: url('https:\/\/webdo.tn\/en\/wp-content\/plugins\/wp-rocket\/assets\/img\/youtube.png');}","hash":"a78b0213-cefd-48a6-9d8c-1468fa5c1c98","url":"https:\/\/webdo.tn\/en\/wp-content\/plugins\/wp-rocket\/assets\/img\/youtube.png"}]; const rocket_excluded_pairs = [];</script></head>
+
+<body class="wp-singular post-template-default single single-post postid-395325 single-format-standard wp-embed-responsive wp-theme-webdo en jeg_toggle_dark jeg_single_tpl_1 jnews jsc_normal wpb-js-composer js-comp-ver-6.7.0 vc_responsive">
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWP66LW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+
+<div class="jeg_ad jeg_ad_top jnews_header_top_ads">
+  <div class='ads-wrapper  '></div></div>
+
+
+<div class="jeg_viewport">
+  <div class="jeg_header_wrapper">
+    <div class="jeg_header_instagram_wrapper">
+    </div>
+
+<!-- HEADER -->
+<div class="jeg_header normal">
+    <div class="jeg_topbar jeg_container dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left  jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item">
+	<ul class="jeg_menu jeg_top_menu"><li id="menu-item-240379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-240379"><a href="https://webdo.tn/en/">Home</a></li>
+<li id="menu-item-240380" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-240380"><a href="#">About Us</a></li>
+<li id="menu-item-240381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-240381"><a href="#">Contact</a></li>
+</ul></div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center  jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                                            </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right  jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                                            </div>
+                </div>
+
+                        </div>
+    </div>
+</div><!-- /.jeg_container --><div class="jeg_midbar jeg_container normal">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item jeg_logo jeg_desktop_logo">
+			<div class="site-title">
+	    	<a href="https://webdo.tn/en/" style="padding: 0 0 0 0;">
+	    	    <img width="286" height="120" class='jeg_logo_img' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20286%20120'%3E%3C/svg%3E" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 2x" alt="webdo"data-light-src="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png" data-light-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 2x" data-dark-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" data-dark-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png"><noscript><img width="286" height="120" class='jeg_logo_img' src="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png" srcset="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 2x" alt="webdo"data-light-src="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png" data-light-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/Webdo-Tunisie-2.png 2x" data-dark-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" data-dark-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x"></noscript>	    	</a>
+	    </div>
+	</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                                            </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_alignright">
+                        <div class="jeg_nav_item jeg_nav_html">
+    <div class="lang-toggle" data-active-lang="" aria-label="Language switcher">
+  <a class="lang-option fr" href="/fr/" data-lang="fr" lang="fr" aria-label="Français"><span class="abbr fr">FR</span></a>
+  <a class="lang-option ar" href="/ar/" data-lang="ar" lang="ar" aria-label="العربية"><span class="abbr">AR</span></a>
+  <a class="lang-option en" href="/en/" data-lang="en" lang="en" aria-label="English"><span class="abbr">EN</span></a>
+  <span class="lang-slider"></span>
+</div>
+
+<style>
+  .lang-toggle {
+    display: inline-flex;
+    position: relative;
+    background: #fff;
+    border-radius: 30px;
+    padding: 3px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .lang-option {
+    padding: 8px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #f;
+    text-decoration: none;
+    z-index: 2;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(33.333% - 6px);
+    height: calc(100% - 6px);
+    background: #000;
+    border-radius: 30px;
+    transition: left 0.25s ease;
+    z-index: 1;
+  }
+  .lang-toggle[data-active-lang="fr"] .lang-option[data-lang="fr"],
+  .lang-toggle[data-active-lang="ar"] .lang-option[data-lang="ar"],
+  .lang-toggle[data-active-lang="en"] .lang-option[data-lang="en"] { color: #fff; }
+
+  .lang-toggle[data-active-lang="fr"] .lang-slider { left: 3px; }
+  .lang-toggle[data-active-lang="ar"] .lang-slider { left: calc(33.333% + 3px); }
+  .lang-toggle[data-active-lang="en"] .lang-slider { left: calc(66.666% + 3px); }
+</style>
+
+<script type="rocketlazyloadscript">
+  (function() {
+    var toggle = document.querySelector('.lang-toggle');
+    if (!toggle) return;
+
+    var base = 'https://www.webdo.tn'; // adapte si nécessaire
+    var path = window.location.pathname || '/';
+    var active = path.indexOf('/ar/') === 0 || path === '/ar' ? 'ar'
+               : path.indexOf('/en/') === 0 || path === '/en' ? 'en'
+               : 'fr';
+    toggle.setAttribute('data-active-lang', active);
+
+    // Conserve le reste du chemin (suppose mêmes slugs entre langues)
+    var rest = path.replace(/^\/(en|ar)(\/|$)/, '/');
+
+    var linkFr = toggle.querySelector('.lang-option.fr');
+    var linkAr = toggle.querySelector('.lang-option.ar');
+    var linkEn = toggle.querySelector('.lang-option.en');
+    if (linkFr) linkFr.setAttribute('href', base + rest);
+    if (linkAr) linkAr.setAttribute('href', base + '/ar' + rest);
+    if (linkEn) linkEn.setAttribute('href', base + '/en' + rest);
+
+    // Pas de délai/animation bloquante : on laisse la navigation se faire
+    toggle.querySelectorAll('.lang-option').forEach(function(a){
+      a.addEventListener('click', function(){ /* accessibilité: rien à empêcher */ });
+      // aria-current pour l’état actif
+      a.setAttribute('aria-current', a.getAttribute('data-lang') === active ? 'true' : 'false');
+    });
+  })();
+</script></div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div><div class="jeg_bottombar jeg_navbar jeg_container jeg_navbar_wrapper jeg_navbar_normal jeg_navbar_normal">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_1" data-animation="animate"><li id="menu-item-232723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-232723 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/">Home</a></li>
+<li id="menu-item-379358" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-379358 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/national/">National</a></li>
+<li id="menu-item-379357" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379357 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/international/">international</a></li>
+<li id="menu-item-379359" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379359 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/regions/">Regions</a></li>
+<li id="menu-item-379360" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379360 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/sport/">Sport</a></li>
+<li id="menu-item-379356" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379356 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/culture/">Culture</a></li>
+<li id="menu-item-379361" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379361 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/various/">Others</a></li>
+</ul></div></div>
+                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                                            </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                        <!-- Search Icon -->
+<div class="jeg_nav_item jeg_search_wrapper search_icon jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://webdo.tn/en/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div></div><!-- /.jeg_header -->  </div>
+  <div class="jeg_header_sticky">
+    <div class="sticky_blankspace"></div>
+<div class="jeg_header normal">
+    <div class="jeg_container">
+        <div data-mode="scroll" class="jeg_stickybar jeg_navbar jeg_navbar_wrapper jeg_navbar_normal jeg_navbar_normal">
+            <div class="container">
+    <div class="jeg_nav_row">
+        
+            <div class="jeg_nav_col jeg_nav_left jeg_nav_grow">
+                <div class="item_wrap jeg_nav_alignleft">
+                    <div class="jeg_nav_item jeg_main_menu_wrapper">
+<div class="jeg_mainmenu_wrap"><ul class="jeg_menu jeg_main_menu jeg_menu_style_1" data-animation="animate"><li id="menu-item-232723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-232723 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/">Home</a></li>
+<li id="menu-item-379358" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-379358 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/national/">National</a></li>
+<li id="menu-item-379357" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379357 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/international/">international</a></li>
+<li id="menu-item-379359" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379359 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/regions/">Regions</a></li>
+<li id="menu-item-379360" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379360 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/sport/">Sport</a></li>
+<li id="menu-item-379356" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379356 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/culture/">Culture</a></li>
+<li id="menu-item-379361" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379361 bgnav" data-item-row="default" ><a href="https://webdo.tn/en/actualites/various/">Others</a></li>
+</ul></div></div>
+                </div>
+            </div>
+
+            
+            <div class="jeg_nav_col jeg_nav_center jeg_nav_normal">
+                <div class="item_wrap jeg_nav_aligncenter">
+                                    </div>
+            </div>
+
+            
+            <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                <div class="item_wrap jeg_nav_alignright">
+                    <!-- Search Icon -->
+<div class="jeg_nav_item jeg_search_wrapper search_icon jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://webdo.tn/en/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                </div>
+            </div>
+
+                </div>
+</div>        </div>
+    </div>
+</div>
+  </div>
+  <div class="jeg_navbar_mobile_wrapper">
+    <div class="jeg_navbar_mobile" data-mode="scroll">
+    <div class="jeg_mobile_bottombar jeg_mobile_midbar jeg_container dark">
+    <div class="container">
+        <div class="jeg_nav_row">
+            
+                <div class="jeg_nav_col jeg_nav_left jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignleft">
+                        <div class="jeg_nav_item">
+    <a href="#" class="toggle_btn jeg_mobile_toggle"><i class="fa fa-bars"></i></a>
+</div><div class="jeg_nav_item jeg_nav_html">
+    <div class="lang-toggle" data-active-lang="" aria-label="Language switcher">
+  <a class="lang-option fr" href="/fr/" data-lang="fr" lang="fr" hreflang="fr" aria-label="Français">🇫🇷 <span class="abbr">FR</span></a>
+  <a class="lang-option ar" href="/ar/" data-lang="ar" lang="ar" hreflang="ar" aria-label="العربية">🇸🇦 <span class="abbr">AR</span></a>
+  <a class="lang-option en" href="/en/" data-lang="en" lang="en" hreflang="en" aria-label="English">🇬🇧 <span class="abbr">EN</span></a>
+  <span class="lang-slider"></span>
+</div>
+
+<div class="lang-dropdown" aria-label="Language switcher">
+  <label for="lang-select" class="sr-only">Language</label>
+  <select id="lang-select">
+    <option value="fr">FR</option>
+    <option value="ar">AR</option>
+    <option value="en">EN</option>
+  </select>
+</div>
+
+<style>
+@media screen and (max-width: 680px) {
+  #lang-select {
+    background-color: #61c419;
+    color: #000; /* texte visible (valeur sélectionnée) */
+  }
+  #lang-select option {
+    color: #000 !important; /* peut être ignoré dans la liste ouverte selon le navigateur */
+    /* background-color: #61c419;  souvent ignoré aussi */
+  }
+}
+  .lang-toggle {
+    display: inline-flex;
+    position: relative;
+    background: #fff;
+    border-radius: 30px;
+    padding: 3px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .lang-option {
+    padding: 8px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    z-index: 2;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(33.333% - 6px);
+    height: calc(100% - 6px);
+
+    border-radius: 30px;
+    transition: left 0.25s ease;
+    z-index: 1;
+  }
+
+
+  
+  /* Dropdown mobile (caché par défaut) */
+  
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .lang-dropdown select {
+     padding: 8px 12px; border-radius: 8px; border: 1px solid #e0e0e0; font-weight: 600;
+     }
+
+  
+  @media (max-width: 687px) {
+    .lang-toggle { display: none; }
+    .lang-dropdown { display: block; }
+  }
+</style>
+
+<script type="rocketlazyloadscript">
+  (function() {
+    var toggle = document.querySelector('.lang-toggle');
+    if (!toggle) return;
+
+    var base = 'https://www.webdo.tn'; // adapte si nécessaire
+    var path = window.location.pathname || '/';
+    var active = path.indexOf('/ar/') === 0 || path === '/ar' ? 'ar'
+               : path.indexOf('/en/') === 0 || path === '/en' ? 'en'
+               : 'fr';
+    toggle.setAttribute('data-active-lang', active);
+
+    // Conserve le reste du chemin (suppose mêmes slugs entre langues)
+    var rest = path.replace(/^\/(en|ar)(\/|$)/, '/');
+
+    var linkFr = toggle.querySelector('.lang-option.fr');
+    var linkAr = toggle.querySelector('.lang-option.ar');
+    var linkEn = toggle.querySelector('.lang-option.en');
+    if (linkFr) linkFr.setAttribute('href', base + rest);
+    if (linkAr) linkAr.setAttribute('href', base + '/ar' + rest);
+    if (linkEn) linkEn.setAttribute('href', base + '/en' + rest);
+
+    // Pas de délai/animation bloquante : on laisse la navigation se faire
+    toggle.querySelectorAll('.lang-option').forEach(function(a){
+      a.addEventListener('click', function(){ /* accessibilité: rien à empêcher */ });
+      // aria-current pour l’état actif
+      a.setAttribute('aria-current', a.getAttribute('data-lang') === active ? 'true' : 'false');
+    });
+
+    // Dropdown mobile: valeur active et redirection
+    var hrefFr = base + rest;
+    var hrefAr = base + '/ar' + rest;
+    var hrefEn = base + '/en' + rest;
+    var select = document.getElementById('lang-select');
+    if (select) {
+      select.value = active;
+      select.addEventListener('change', function() {
+        var value = select.value;
+        var target = value === 'ar' ? hrefAr : (value === 'en' ? hrefEn : hrefFr);
+        window.location.href = target;
+      });
+    }
+  })();
+</script></div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_center jeg_nav_grow">
+                    <div class="item_wrap jeg_nav_aligncenter">
+                        <div class="jeg_nav_item jeg_mobile_logo">
+			<div class="site-title">
+	    	<a href="https://webdo.tn/en/">
+		        <img width="205" height="60" class='jeg_logo_img' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20205%2060'%3E%3C/svg%3E" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x" alt="webdo"data-light-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" data-light-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x" data-dark-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" data-dark-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png"><noscript><img width="205" height="60" class='jeg_logo_img' src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x" alt="webdo"data-light-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" data-light-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x" data-dark-src="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png" data-dark-srcset="https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 1x, https://webdo.tn/en/wp-content/uploads/2025/05/logo-webdo-white.png 2x"></noscript>		    </a>
+	    </div>
+	</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_nav_col jeg_nav_right jeg_nav_normal">
+                    <div class="item_wrap jeg_nav_alignright">
+                        <div class="jeg_nav_item jeg_search_wrapper jeg_search_popup_expand">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+	<form action="https://webdo.tn/en/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div>                    </div>
+                </div>
+
+                        </div>
+    </div>
+</div></div>
+<div class="sticky_blankspace" style="height: 60px;"></div>  </div>
+      <div class="post-wrapper">
+
+        <div class="post-wrap" >
+
+            
+            <div class="jeg_main ">
+                <div class="jeg_container">
+                    <div class="jeg_content jeg_singlepage">
+
+	<div class="container">
+
+		<div class="jeg_ad jeg_article jnews_article_top_ads">
+			<div class='ads-wrapper  '><div class='ads_code'><div class="ads_code_bannier">                    
+<div id="div-gpt-ad-1749056308705-0" style="min-width: 728px; min-height: 90px;"><script type="rocketlazyloadscript">
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1749056308705-0'); });
+  </script></div></div></div></div>		</div>
+
+		<div class="row">
+			<div class="jeg_main_content col-md-8">
+				<div class="jeg_inner_content">
+					
+												<div class="jeg_breadcrumbs jeg_breadcrumb_container">
+							<div id="breadcrumbs"><span class="">
+                <a href="https://webdo.tn/en">Home</a>
+            </span><i class="fa fa-angle-right"></i><span class="breadcrumb_last_link">
+                <a href="https://webdo.tn/en/actualites/national/">National</a>
+            </span></div>						</div>
+						
+						<div class="entry-header">
+							
+							<h1 class="jeg_post_title">The school that kills, three broken lives, a mourning country!</h1>
+
+							
+							<div class="jeg_meta_container"><div class="jeg_post_meta jeg_post_meta_1">
+
+	<div class="meta_left">
+									<div class="jeg_meta_author">
+										<span class="meta_text">by</span>
+					<a href="https://webdo.tn/en/actualite/author/webdo/">Webdo</a>				</div>
+					
+					<div class="jeg_meta_date">
+				<a href="https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/">Tuesday 15 April 2025 10:08</a>
+			</div>
+		
+					<div class="jeg_meta_category">
+				<span><span class="meta_text">in</span>
+					<a href="https://webdo.tn/en/actualites/national/" rel="category tag">National</a>				</span>
+			</div>
+		
+			</div>
+
+	<div class="meta_right">
+					</div>
+</div>
+</div>
+						</div>
+
+						<div class="jeg_featured featured_image"><a href="https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp"><div class="thumbnail-container" style="padding-bottom:52.083%"><img width="720" height="375" src="https://webdo.tn/en/wp-content/uploads/2025/08/b7cb4f1b924f993d4f77fe9aacc4ca15.webp-720x375.webp" class="attachment-jnews-750x375 size-jnews-750x375 wp-post-image webdo-lcp" alt="" decoding="async" fetchpriority="high" loading="eager" /></div></a></div>
+						
+						<div class="jeg_ad jeg_article jnews_content_top_ads "><div class='ads-wrapper  '></div></div>
+						<div class="entry-content no-share">
+							<div class="jeg_share_button share-float jeg_sticky_share clearfix share-normal">
+															</div>
+
+							<div class="content-inner ">
+								<div class="addtoany_share_save_container addtoany_content addtoany_content_top"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325/" data-a2a-title="The school that kills, three broken lives, a mourning country!"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwebdo.tn%2Fen%2Factualite%2Fnational%2Fthe-school-that-kills-three-broken-lives-a-mourning-country%2F395325%2F&amp;linkname=The%20school%20that%20kills%2C%20three%20broken%20lives%2C%20a%20mourning%20country%21" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_x" href="https://www.addtoany.com/add_to/x?linkurl=https%3A%2F%2Fwebdo.tn%2Fen%2Factualite%2Fnational%2Fthe-school-that-kills-three-broken-lives-a-mourning-country%2F395325%2F&amp;linkname=The%20school%20that%20kills%2C%20three%20broken%20lives%2C%20a%20mourning%20country%21" title="X" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwebdo.tn%2Fen%2Factualite%2Fnational%2Fthe-school-that-kills-three-broken-lives-a-mourning-country%2F395325%2F&amp;linkname=The%20school%20that%20kills%2C%20three%20broken%20lives%2C%20a%20mourning%20country%21" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fwebdo.tn%2Fen%2Factualite%2Fnational%2Fthe-school-that-kills-three-broken-lives-a-mourning-country%2F395325%2F&amp;linkname=The%20school%20that%20kills%2C%20three%20broken%20lives%2C%20a%20mourning%20country%21" title="LinkedIn" rel="nofollow noopener" target="_blank"></a></div></div><div>
+<p>The drama that occurred in Mazzouna, where three high school students died after the collapse of a dilapidated wall, reveals the alarming state of school infrastructure in Tunisia. While more than 4,500 establishments require urgent work, the federation of secondary education calls for a day of mourning and protest, accusing the state of abandonment and irresponsibility. A tragic symbol of the collapse of an essential public service.</p>
+<p>																		Three dead. Three barely major students, crushed by a lizarded wall in a high school in Mazzouna. This drama is not an isolated tragedy, it is the silent cry of a ruined school, of an abandoned system, of a sacrificed youth.</p>
+<p>This Tuesday, April 15, the courses are suspended in all high schools and colleges in the country. A collective judgment, a national mourning at the call of the General Federation of Secondary Education. But this suspension goes beyond homage: it is an accusation. A reporting on the chronic disengagement of the authorities, of their inaction in the face of the alarming degradation of school infrastructure, of their inability to guarantee a fundamental right: to learn in security.</p>
+<p>In Mazzouna, it was not the winds or earthquakes that killed these children. These are forty years of negligence. These are walls built in 1983, never renovated, never monitored. And these are above all ignored warnings: in 2022 already, the Court of Auditors alerted to the existence of 1,300 establishments with &#8220;real structural risk&#8221;. Nothing has been done.</p>
+<p>The President of the Republic, Kais Saied, expressed his pain and ordered the opening of an investigation, demanding a national audit of schools and sanctions. It would take more than an audit to give the public school its dignity. You need a rescue plan. It takes a clear, structured, constant political will. Above all, it is necessary to end DIY.</p>
+<p>Because the figures are freezing: 4,500 out of 6102 establishments require urgent interventions. Thousands of students study in buildings without water, without electricity, sometimes even without fences. In rural regions, going to school becomes a physical, moral, sometimes fatal test.</p>
+<p>The Ministry of Education is not innocent. His chief, Noureddine Nouri, visited Sidi Bouzid a week before the drama, without seeing &#8211; or without denouncing &#8211; the state of dilapidation of the place. Last November, he promised renovations as part of a budget, however increasing. Promises that have remained a dead letter, as too often.</p>
+<p>What happened in Mazzouna is more than an accident. It is an alarm signal, a breaking point. Tunisian school is in danger. She no longer needs discourse or diagnostics. She needs acts, concrete renovations, a reinvention of the educational public service. And she needs, above all, that we stop waiting for other children to die to wake up.</p>
+</p></div>
+								
+								
+															</div>
+
+
+						</div>
+						
+						
+						<div class="jeg_ad jeg_article jnews_content_bottom_ads "><div class='ads-wrapper  '></div></div><div class="jnews_prev_next_container"></div><div class="jnews_author_box_container "></div><div class="jnews_related_post_container"></div><div class="jnews_popup_post_container">    <section class="jeg_popup_post">
+        <span class="caption">Next Post</span>
+
+                    <div class="jeg_popup_content">
+                <div class="jeg_thumb">
+                                        <a href="https://webdo.tn/en/actualite/national/phosphate-a-start-of-year-below-expectations-for-the-cpg/395319/">
+                        <div class="thumbnail-container  size-1000 "><img width="75" height="75" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2075%2075'%3E%3C/svg%3E" class="attachment-jnews-75x75 size-jnews-75x75 wp-post-image" alt="" decoding="async" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-75x75.webp 75w, https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-150x150.webp 150w, https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-350x350.webp 350w" data-lazy-sizes="(max-width: 75px) 100vw, 75px" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-75x75.webp" /><noscript><img width="75" height="75" src="https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-75x75.webp" class="attachment-jnews-75x75 size-jnews-75x75 wp-post-image" alt="" decoding="async" srcset="https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-75x75.webp 75w, https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-150x150.webp 150w, https://webdo.tn/en/wp-content/uploads/2025/08/840b89c87841ae536fb70244dbdc423d.webp-350x350.webp 350w" sizes="(max-width: 75px) 100vw, 75px" /></noscript></div>                    </a>
+                </div>
+                <h3 class="post-title">
+                    <a href="https://webdo.tn/en/actualite/national/phosphate-a-start-of-year-below-expectations-for-the-cpg/395319/">
+                        Phosphate: a start of year below expectations for the CPG                    </a>
+                </h3>
+            </div>
+                
+        <a href="#" class="jeg_popup_close"><i class="fa fa-close"></i></a>
+    </section>
+</div><div class="jnews_comment_container"></div>
+									</div>
+			</div>
+			
+<div class="jeg_sidebar  jeg_sticky_sidebar col-md-4">
+    <div class="widget widget_jnews_module_block_4" id="jnews_module_block_4-3"><div  class="jeg_postblock_4 jeg_postblock jeg_module_hook jeg_pagination_disable jeg_col_1o3 jnews_module_395325_0_696940daaa4e5  normal " data-unique="jnews_module_395325_0_696940daaa4e5">
+					<div class="jeg_block_heading jeg_block_heading_6 jeg_subcat_right">
+                     <h3 class="jeg_block_title"><span> Most recent</span></h3>
+                     
+                 </div>
+					<div class="jeg_posts jeg_block_container">
+                    
+                    <div class="jeg_posts jeg_load_more_flag"><article class="jeg_post jeg_pl_md_3 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://webdo.tn/en/actualite/national/tunisia-the-head-of-government-calls-for-a-legislative-revolution/400125/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2086'%3E%3C/svg%3E" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2026/01/Zenzri-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/Zenzri-350x250.jpg 350w" data-lazy-sizes="(max-width: 120px) 100vw, 120px" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2026/01/Zenzri-120x86.jpg" /><noscript><img width="120" height="86" src="https://webdo.tn/en/wp-content/uploads/2026/01/Zenzri-120x86.jpg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" srcset="https://webdo.tn/en/wp-content/uploads/2026/01/Zenzri-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/Zenzri-350x250.jpg 350w" sizes="(max-width: 120px) 100vw, 120px" /></noscript></div></a>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://webdo.tn/en/actualite/national/tunisia-the-head-of-government-calls-for-a-legislative-revolution/400125/">Tunisia: The head of government calls for a “legislative revolution”</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_author"><span class="by">by</span> <a href="https://webdo.tn/en/actualite/author/webdo/">Webdo</a></div><div class="jeg_meta_date"><a href="https://webdo.tn/en/actualite/national/tunisia-the-head-of-government-calls-for-a-legislative-revolution/400125/"><i class="fa fa-clock-o"></i> 8 January 2026</a></div></div>
+                        <div class="jeg_post_excerpt">
+                            <p></p>
+                        </div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_3 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://webdo.tn/en/actualite/national/expiration-of-the-cnam-pharmacists-agreement-the-order-warns-against-maintaining-third-party-payment/400123/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2086'%3E%3C/svg%3E" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2026/01/Conseil-National-de-lordre-des-Pharmaciens-de-Tunisie-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/Conseil-National-de-lordre-des-Pharmaciens-de-Tunisie-350x250.jpg 350w" data-lazy-sizes="(max-width: 120px) 100vw, 120px" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2026/01/Conseil-National-de-lordre-des-Pharmaciens-de-Tunisie-120x86.jpg" /><noscript><img width="120" height="86" src="https://webdo.tn/en/wp-content/uploads/2026/01/Conseil-National-de-lordre-des-Pharmaciens-de-Tunisie-120x86.jpg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" srcset="https://webdo.tn/en/wp-content/uploads/2026/01/Conseil-National-de-lordre-des-Pharmaciens-de-Tunisie-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/Conseil-National-de-lordre-des-Pharmaciens-de-Tunisie-350x250.jpg 350w" sizes="(max-width: 120px) 100vw, 120px" /></noscript></div></a>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://webdo.tn/en/actualite/national/expiration-of-the-cnam-pharmacists-agreement-the-order-warns-against-maintaining-third-party-payment/400123/">Expiration of the CNAM–pharmacists agreement: The Order warns against maintaining third-party payment</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_author"><span class="by">by</span> <a href="https://webdo.tn/en/actualite/author/webdo/">Webdo</a></div><div class="jeg_meta_date"><a href="https://webdo.tn/en/actualite/national/expiration-of-the-cnam-pharmacists-agreement-the-order-warns-against-maintaining-third-party-payment/400123/"><i class="fa fa-clock-o"></i> 8 January 2026</a></div></div>
+                        <div class="jeg_post_excerpt">
+                            <p></p>
+                        </div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_3 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://webdo.tn/en/actualite/sport/tap-referendum-abdi-jaouadi-masghouni-tissaoui-and-tlili-crowned-athletes-of-the-year/400121/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2086'%3E%3C/svg%3E" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2026/01/Ali-Abdi-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/Ali-Abdi-350x250.jpg 350w" data-lazy-sizes="(max-width: 120px) 100vw, 120px" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2026/01/Ali-Abdi-120x86.jpg" /><noscript><img width="120" height="86" src="https://webdo.tn/en/wp-content/uploads/2026/01/Ali-Abdi-120x86.jpg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" srcset="https://webdo.tn/en/wp-content/uploads/2026/01/Ali-Abdi-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/Ali-Abdi-350x250.jpg 350w" sizes="(max-width: 120px) 100vw, 120px" /></noscript></div></a>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://webdo.tn/en/actualite/sport/tap-referendum-abdi-jaouadi-masghouni-tissaoui-and-tlili-crowned-athletes-of-the-year/400121/">TAP referendum: Abdi, Jaouadi, Masghouni, Tissaoui and Tlili crowned athletes of the year</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_author"><span class="by">by</span> <a href="https://webdo.tn/en/actualite/author/webdo/">Webdo</a></div><div class="jeg_meta_date"><a href="https://webdo.tn/en/actualite/sport/tap-referendum-abdi-jaouadi-masghouni-tissaoui-and-tlili-crowned-athletes-of-the-year/400121/"><i class="fa fa-clock-o"></i> 8 January 2026</a></div></div>
+                        <div class="jeg_post_excerpt">
+                            <p></p>
+                        </div>
+                    </div>
+                </article><article class="jeg_post jeg_pl_md_3 format-standard">
+                    <div class="jeg_thumb">
+                        
+                        <a href="https://webdo.tn/en/actualite/national/drug-trafficking-case-dismissal-in-favor-of-slim-chiboub/400119/"><div class="thumbnail-container  size-715 "><img width="120" height="86" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2086'%3E%3C/svg%3E" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" data-lazy-srcset="https://webdo.tn/en/wp-content/uploads/2026/01/slim-chiboub-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/slim-chiboub-350x250.jpg 350w" data-lazy-sizes="(max-width: 120px) 100vw, 120px" data-lazy-src="https://webdo.tn/en/wp-content/uploads/2026/01/slim-chiboub-120x86.jpg" /><noscript><img width="120" height="86" src="https://webdo.tn/en/wp-content/uploads/2026/01/slim-chiboub-120x86.jpg" class="attachment-jnews-120x86 size-jnews-120x86 wp-post-image" alt="" decoding="async" srcset="https://webdo.tn/en/wp-content/uploads/2026/01/slim-chiboub-120x86.jpg 120w, https://webdo.tn/en/wp-content/uploads/2026/01/slim-chiboub-350x250.jpg 350w" sizes="(max-width: 120px) 100vw, 120px" /></noscript></div></a>
+                    </div>
+                    <div class="jeg_postblock_content">
+                        <h3 class="jeg_post_title">
+                            <a href="https://webdo.tn/en/actualite/national/drug-trafficking-case-dismissal-in-favor-of-slim-chiboub/400119/">Drug trafficking case: Dismissal in favor of Slim Chiboub</a>
+                        </h3>
+                        <div class="jeg_post_meta"><div class="jeg_meta_author"><span class="by">by</span> <a href="https://webdo.tn/en/actualite/author/webdo/">Webdo</a></div><div class="jeg_meta_date"><a href="https://webdo.tn/en/actualite/national/drug-trafficking-case-dismissal-in-favor-of-slim-chiboub/400119/"><i class="fa fa-clock-o"></i> 8 January 2026</a></div></div>
+                        <div class="jeg_post_excerpt">
+                            <p></p>
+                        </div>
+                    </div>
+                </article></div>
+                    <div class='module-overlay'>
+				    <div class='preloader_type preloader_dot'>
+				        <div class="module-preloader jeg_preloader dot">
+				            <span></span><span></span><span></span>
+				        </div>
+				        <div class="module-preloader jeg_preloader circle">
+				            <div class="jnews_preloader_circle_outer">
+				                <div class="jnews_preloader_circle_inner"></div>
+				            </div>
+				        </div>
+				        <div class="module-preloader jeg_preloader square">
+				            <div class="jeg_square">
+				                <div class="jeg_square_inner"></div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+                </div>
+                <div class="jeg_block_navigation">
+                    <div class='navigation_overlay'><div class='module-preloader jeg_preloader'><span></span><span></span><span></span></div></div>
+                    
+                    
+                </div>
+					
+					<script type="rocketlazyloadscript">var jnews_module_395325_0_696940daaa4e5 = {"header_icon":"","first_title":" Most recent","second_title":"","url":"","header_type":"heading_6","header_background":"","header_secondary_background":"","header_text_color":"","header_line_color":"","header_accent_color":"","header_filter_category":"","header_filter_author":"","header_filter_tag":"","header_filter_text":"All","post_type":"post","content_type":"all","number_post":"4","post_offset":"0","unique_content":"disable","include_post":"","exclude_post":"","include_category":"","exclude_category":"","include_author":"","include_tag":"","exclude_tag":"","sort_by":"latest","date_format":"default","date_format_custom":"Y\/m\/d","excerpt_length":"0","excerpt_ellipsis":"","force_normal_image_load":"0","pagination_mode":"disable","pagination_nextprev_showtext":"0","pagination_number_post":"4","pagination_scroll_limit":"0","ads_type":"disable","ads_position":"1","ads_random":"0","ads_image":"","ads_image_tablet":"","ads_image_phone":"","ads_image_link":"","ads_image_alt":"","ads_image_new_tab":"0","google_publisher_id":"","google_slot_id":"","google_desktop":"auto","google_tab":"auto","google_phone":"auto","content":"","ads_bottom_text":"0","boxed":"0","boxed_shadow":"0","el_id":"","el_class":"","scheme":"normal","column_width":"auto","title_color":"","accent_color":"","alt_color":"","excerpt_color":"","css":"","paged":1,"column_class":"jeg_col_1o3","class":"jnews_block_4"};</script>
+				</div></div><div class="widget widget_jnews_module_element_ads" id="jnews_module_element_ads-13"><div  class='jeg_ad jeg_ad_module jnews_module_395325_1_696940daabc0e   '><div class='ads-wrapper'><div class=''><div id="div-gpt-ad-1749062829262-0" style="min-width: 250px; min-height: 250px;"><script type="rocketlazyloadscript">
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1749062829262-0'); });
+  </script></div></div></div></div></div><div class="widget widget_text" id="text-3"><div class="jeg_block_heading jeg_block_heading_6 jnews_696940daabc2a"><h3 class="jeg_block_title"><span>Most viewed (72h)</span></h3></div>			<div class="textwidget"><div class="wpp-shortcode"><script type="application/json" data-id="wpp-shortcode-inline-js">{"title":"","limit":"5","offset":0,"range":"daily","time_quantity":24,"time_unit":"hour","freshness":false,"order_by":"views","post_type":"post","pid":"","exclude":"","cat":"","taxonomy":"category","term_id":"","author":"","shorten_title":{"active":false,"length":0,"words":false},"post-excerpt":{"active":false,"length":0,"keep_format":false,"words":false},"thumbnail":{"active":true,"build":"manual","width":"120","height":"83"},"rating":false,"stats_tag":{"comment_count":false,"views":false,"author":false,"date":{"active":"1","format":"F j, Y"},"category":false,"taxonomy":{"active":false,"name":"category"}},"markup":{"custom_html":true,"wpp-start":"<ul class=\"wpp-list\">","wpp-end":"<\/ul>","title-start":"<h2>","title-end":"<\/h2>","post-html":"<li class=\"{current_class}\">{thumb} {title} <span class=\"wpp-meta post-stats\">{stats}<\/span><p class=\"wpp-excerpt\">{excerpt}<\/p><\/li>"},"theme":{"name":""}}</script><div class="wpp-shortcode-placeholder"></div></div>
+</div>
+		</div><div class="widget widget_jnews_module_element_ads" id="jnews_module_element_ads-12"><div  class='jeg_ad jeg_ad_module jnews_module_395325_2_696940daabd39   '><div class='ads-wrapper'><div class=''><!-- /45663897/pave300x600 -->
+<div id='div-gpt-ad-1757088629715-0' style='min-width: 300px; min-height: 600px;'>
+  <script type="rocketlazyloadscript">
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1757088629715-0'); });
+  </script>
+</div></div></div></div></div></div>		</div>
+
+		<div class="jeg_ad jeg_article jnews_article_bottom_ads">
+			<div class='ads-wrapper  '></div>		</div>
+
+	</div>
+</div>
+                </div>
+            </div>
+
+            <div id="post-body-class" class="wp-singular post-template-default single single-post postid-395325 single-format-standard wp-embed-responsive wp-theme-webdo jeg_toggle_dark jeg_single_tpl_1 jnews jsc_normal wpb-js-composer js-comp-ver-6.7.0 vc_responsive"></div>
+
+            
+        </div>
+
+        <div class="post-ajax-overlay">
+    <div class="preloader_type preloader_dot">
+        <div class="newsfeed_preloader jeg_preloader dot">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="newsfeed_preloader jeg_preloader circle">
+            <div class="jnews_preloader_circle_outer">
+                <div class="jnews_preloader_circle_inner"></div>
+            </div>
+        </div>
+        <div class="newsfeed_preloader jeg_preloader square">
+            <div class="jeg_square"><div class="jeg_square_inner"></div></div>
+        </div>
+    </div>
+</div>
+    </div>
+        <div class="footer-holder" id="footer" data-id="footer">
+                        <div class="jeg_footer_instagram_wrapper jeg_container">
+                            </div>
+                    <div class="jeg_footer_tiktok_wrapper jeg_container">
+                            </div>
+        
+<div class="jeg_footer jeg_footer_5 normal">
+    <div class="jeg_footer_container jeg_container">
+
+        <div class="jeg_footer_content">
+            <div class="container">
+
+                			<div class="jeg_footer_social">
+				<div class="socials_widget jeg_new_social_icon_block circle">
+					<a href="https://www.facebook.com/webdo.tn" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> <span>Facebook</span></a><a href="https://x.com/webdo_tn" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> <span>Twitter</span></a><a href="https://www.youtube.com/@webdoofficiel" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> <span>Youtube</span></a><a href="https://webdo.tn/en/rss" target='_blank' rel='external noopener nofollow' class="jeg_rss"><i class="fa fa-rss"></i> <span>RSS</span></a>				</div>
+			</div>
+			
+                <div class="jeg_footer_primary clearfix">
+                    <!-- Footer Widget: Column 1 -->
+                    <div class="col-md-4 footer_column">
+                        <div class="footer_widget widget_jnews_about" id="jnews_about-2">        <div class="jeg_about ">
+									            <p>Your Tunis electronic newspaper. Follow all the latest news in Tunisia in real time: politics, society, culture, economy, and more. Webdo, a reliable and independent source at the heart of the news.</p>
+
+			        </div>
+		</div><div class="footer_widget widget_jnews_social" id="jnews_social-2">
+        <div class="jeg_social_wrap ">
+			                <p>
+					<strong>Follow us</strong>                </p>
+			
+            <div class="socials_widget   rounded">
+				<a href="https://www.facebook.com/webdo.tn/" target="_blank" rel="external noopener nofollow" class="jeg_facebook">
+                                            <i class="fa fa-facebook"></i>
+                                            
+                                        </a><a href="https://x.com/webdo_tn" target="_blank" rel="external noopener nofollow" class="jeg_twitter">
+                                            <i class="fa fa-twitter"></i>
+                                            
+                                        </a><a href="https://www.youtube.com/@webdoofficiel?sub_confirmation=1" target="_blank" rel="external noopener nofollow" class="jeg_youtube">
+                                            <i class="fa fa-youtube-play"></i>
+                                            
+                                        </a>            </div>
+
+						<style scoped></style>        </div>
+
+		</div>                    </div>
+
+                    <!-- Footer Widget: Column 2 -->
+                    <div class="col-md-4 footer_column">
+                        <div class="footer_widget widget_nav_menu" id="nav_menu-2"><div class="jeg_footer_heading jeg_footer_heading_1"><h3 class="jeg_footer_title"><span>MENU</span></h3></div><div class="menu-menu-principale-container"><ul id="menu-menu-principale" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-232723"><a href="https://webdo.tn/en/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-379358"><a href="https://webdo.tn/en/actualites/national/">National</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379357"><a href="https://webdo.tn/en/actualites/international/">international</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379359"><a href="https://webdo.tn/en/actualites/regions/">Regions</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379360"><a href="https://webdo.tn/en/actualites/sport/">Sport</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379356"><a href="https://webdo.tn/en/actualites/culture/">Culture</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379361"><a href="https://webdo.tn/en/actualites/various/">Others</a></li>
+</ul></div></div>                    </div>
+
+                    <!-- Footer Widget: Column 3 -->
+                    <div class="col-md-4 footer_column">
+                        <div class="footer_widget widget_tag_cloud" id="tag_cloud-2"><div class="jeg_footer_heading jeg_footer_heading_1"><h3 class="jeg_footer_title"><span>TAGS</span></h3></div><div class="tagcloud"><a href="https://webdo.tn/en/actualite/actor/" class="tag-cloud-link tag-link-12153 tag-link-position-1" style="font-size: 9.575pt;" aria-label="Actor (2 items)">Actor</a>
+<a href="https://webdo.tn/en/actualite/actress/" class="tag-cloud-link tag-link-12135 tag-link-position-2" style="font-size: 12.2pt;" aria-label="Actress (5 items)">Actress</a>
+<a href="https://webdo.tn/en/actualite/american-actress/" class="tag-cloud-link tag-link-12161 tag-link-position-3" style="font-size: 8pt;" aria-label="American Actress (1 item)">American Actress</a>
+<a href="https://webdo.tn/en/actualite/american-cinema/" class="tag-cloud-link tag-link-12156 tag-link-position-4" style="font-size: 8pt;" aria-label="American Cinema (1 item)">American Cinema</a>
+<a href="https://webdo.tn/en/actualite/arab-cinema/" class="tag-cloud-link tag-link-12146 tag-link-position-5" style="font-size: 11.5pt;" aria-label="Arab cinema (4 items)">Arab cinema</a>
+<a href="https://webdo.tn/en/actualite/arab-cinema-center/" class="tag-cloud-link tag-link-12134 tag-link-position-6" style="font-size: 10.625pt;" aria-label="Arab Cinema Center (3 items)">Arab Cinema Center</a>
+<a href="https://webdo.tn/en/actualite/arab-critics-awards-for-european-films/" class="tag-cloud-link tag-link-12132 tag-link-position-7" style="font-size: 11.5pt;" aria-label="Arab Critics’ Awards for European Films (4 items)">Arab Critics’ Awards for European Films</a>
+<a href="https://webdo.tn/en/actualite/cairo-international-film-festival/" class="tag-cloud-link tag-link-12126 tag-link-position-8" style="font-size: 19.375pt;" aria-label="Cairo International Film Festival (39 items)">Cairo International Film Festival</a>
+<a href="https://webdo.tn/en/actualite/carthage-film-festival/" class="tag-cloud-link tag-link-12159 tag-link-position-9" style="font-size: 12.8125pt;" aria-label="Carthage Film Festival (6 items)">Carthage Film Festival</a>
+<a href="https://webdo.tn/en/actualite/ciff/" class="tag-cloud-link tag-link-12123 tag-link-position-10" style="font-size: 19.55pt;" aria-label="CIFF (41 items)">CIFF</a>
+<a href="https://webdo.tn/en/actualite/ciff-2025/" class="tag-cloud-link tag-link-12124 tag-link-position-11" style="font-size: 19.2pt;" aria-label="CIFF 2025 (37 items)">CIFF 2025</a>
+<a href="https://webdo.tn/en/actualite/ciff-2026/" class="tag-cloud-link tag-link-12178 tag-link-position-12" style="font-size: 8pt;" aria-label="CIFF 2026 (1 item)">CIFF 2026</a>
+<a href="https://webdo.tn/en/actualite/cinema/" class="tag-cloud-link tag-link-12107 tag-link-position-13" style="font-size: 22pt;" aria-label="cinema (78 items)">cinema</a>
+<a href="https://webdo.tn/en/actualite/claudia-cardinale/" class="tag-cloud-link tag-link-12136 tag-link-position-14" style="font-size: 11.5pt;" aria-label="Claudia Cardinale (4 items)">Claudia Cardinale</a>
+<a href="https://webdo.tn/en/actualite/director/" class="tag-cloud-link tag-link-12163 tag-link-position-15" style="font-size: 12.2pt;" aria-label="Director (5 items)">Director</a>
+<a href="https://webdo.tn/en/actualite/egyptian-actor/" class="tag-cloud-link tag-link-12155 tag-link-position-16" style="font-size: 9.575pt;" aria-label="Egyptian Actor (2 items)">Egyptian Actor</a>
+<a href="https://webdo.tn/en/actualite/egyptian-cinema/" class="tag-cloud-link tag-link-12116 tag-link-position-17" style="font-size: 13.25pt;" aria-label="Egyptian Cinema (7 items)">Egyptian Cinema</a>
+<a href="https://webdo.tn/en/actualite/el-gouna/" class="tag-cloud-link tag-link-12117 tag-link-position-18" style="font-size: 10.625pt;" aria-label="El Gouna (3 items)">El Gouna</a>
+<a href="https://webdo.tn/en/actualite/el-gouna-2025/" class="tag-cloud-link tag-link-12118 tag-link-position-19" style="font-size: 11.5pt;" aria-label="El Gouna 2025 (4 items)">El Gouna 2025</a>
+<a href="https://webdo.tn/en/actualite/el-gouna-film-festival/" class="tag-cloud-link tag-link-12119 tag-link-position-20" style="font-size: 10.625pt;" aria-label="El Gouna Film Festival (3 items)">El Gouna Film Festival</a>
+<a href="https://webdo.tn/en/actualite/festival/" class="tag-cloud-link tag-link-12110 tag-link-position-21" style="font-size: 21.0375pt;" aria-label="Festival (60 items)">Festival</a>
+<a href="https://webdo.tn/en/actualite/film/" class="tag-cloud-link tag-link-12112 tag-link-position-22" style="font-size: 16.1375pt;" aria-label="Film (16 items)">Film</a>
+<a href="https://webdo.tn/en/actualite/fipresci/" class="tag-cloud-link tag-link-12152 tag-link-position-23" style="font-size: 8pt;" aria-label="FIPRESCI (1 item)">FIPRESCI</a>
+<a href="https://webdo.tn/en/actualite/gaza/" class="tag-cloud-link tag-link-12120 tag-link-position-24" style="font-size: 9.575pt;" aria-label="Gaza (2 items)">Gaza</a>
+<a href="https://webdo.tn/en/actualite/golden-eve/" class="tag-cloud-link tag-link-12130 tag-link-position-25" style="font-size: 10.625pt;" aria-label="Golden Eve (3 items)">Golden Eve</a>
+<a href="https://webdo.tn/en/actualite/golden-globes/" class="tag-cloud-link tag-link-12113 tag-link-position-26" style="font-size: 14.125pt;" aria-label="Golden Globes (9 items)">Golden Globes</a>
+<a href="https://webdo.tn/en/actualite/golden-globes-2026/" class="tag-cloud-link tag-link-12131 tag-link-position-27" style="font-size: 13.25pt;" aria-label="Golden Globes 2026 (7 items)">Golden Globes 2026</a>
+<a href="https://webdo.tn/en/actualite/golden-globes-awards/" class="tag-cloud-link tag-link-12114 tag-link-position-28" style="font-size: 12.2pt;" aria-label="Golden Globes Awards (5 items)">Golden Globes Awards</a>
+<a href="https://webdo.tn/en/actualite/hend-sabry/" class="tag-cloud-link tag-link-12177 tag-link-position-29" style="font-size: 8pt;" aria-label="Hend Sabry (1 item)">Hend Sabry</a>
+<a href="https://webdo.tn/en/actualite/international-conference/" class="tag-cloud-link tag-link-12151 tag-link-position-30" style="font-size: 8pt;" aria-label="International Conference (1 item)">International Conference</a>
+<a href="https://webdo.tn/en/actualite/jcc/" class="tag-cloud-link tag-link-12157 tag-link-position-31" style="font-size: 14.475pt;" aria-label="JCC (10 items)">JCC</a>
+<a href="https://webdo.tn/en/actualite/jcc-2025/" class="tag-cloud-link tag-link-12158 tag-link-position-32" style="font-size: 14.475pt;" aria-label="JCC 2025 (10 items)">JCC 2025</a>
+<a href="https://webdo.tn/en/actualite/kaouther-ben-hania/" class="tag-cloud-link tag-link-12108 tag-link-position-33" style="font-size: 12.8125pt;" aria-label="Kaouther Ben Hania (6 items)">Kaouther Ben Hania</a>
+<a href="https://webdo.tn/en/actualite/khaled-el-nabawy/" class="tag-cloud-link tag-link-12154 tag-link-position-34" style="font-size: 8pt;" aria-label="Khaled El Nabawy (1 item)">Khaled El Nabawy</a>
+<a href="https://webdo.tn/en/actualite/marwan-hamed/" class="tag-cloud-link tag-link-12180 tag-link-position-35" style="font-size: 8pt;" aria-label="Marwan Hamed (1 item)">Marwan Hamed</a>
+<a href="https://webdo.tn/en/actualite/mona-zaki/" class="tag-cloud-link tag-link-12181 tag-link-position-36" style="font-size: 8pt;" aria-label="Mona Zaki (1 item)">Mona Zaki</a>
+<a href="https://webdo.tn/en/actualite/neila-driss/" class="tag-cloud-link tag-link-12111 tag-link-position-37" style="font-size: 21.5625pt;" aria-label="Neïla Driss (70 items)">Neïla Driss</a>
+<a href="https://webdo.tn/en/actualite/nouri-bouzid/" class="tag-cloud-link tag-link-12179 tag-link-position-38" style="font-size: 8pt;" aria-label="Nouri Bouzid (1 item)">Nouri Bouzid</a>
+<a href="https://webdo.tn/en/actualite/palestine/" class="tag-cloud-link tag-link-12121 tag-link-position-39" style="font-size: 9.575pt;" aria-label="Palestine (2 items)">Palestine</a>
+<a href="https://webdo.tn/en/actualite/palestinian-cinema/" class="tag-cloud-link tag-link-12149 tag-link-position-40" style="font-size: 9.575pt;" aria-label="Palestinian Cinema (2 items)">Palestinian Cinema</a>
+<a href="https://webdo.tn/en/actualite/red-sea-international-film-festival/" class="tag-cloud-link tag-link-12145 tag-link-position-41" style="font-size: 9.575pt;" aria-label="Red Sea International Film Festival (2 items)">Red Sea International Film Festival</a>
+<a href="https://webdo.tn/en/actualite/the-golden-globes-omar-sharif-award/" class="tag-cloud-link tag-link-12176 tag-link-position-42" style="font-size: 8pt;" aria-label="The Golden Globes Omar Sharif Award (1 item)">The Golden Globes Omar Sharif Award</a>
+<a href="https://webdo.tn/en/actualite/the-voice-of-hind-rajab/" class="tag-cloud-link tag-link-12109 tag-link-position-43" style="font-size: 11.5pt;" aria-label="The Voice Of Hind Rajab (4 items)">The Voice Of Hind Rajab</a>
+<a href="https://webdo.tn/en/actualite/tunisia/" class="tag-cloud-link tag-link-12098 tag-link-position-44" style="font-size: 8pt;" aria-label="Tunisia (1 item)">Tunisia</a>
+<a href="https://webdo.tn/en/actualite/tunisian-cinema/" class="tag-cloud-link tag-link-12129 tag-link-position-45" style="font-size: 14.475pt;" aria-label="Tunisian cinema (10 items)">Tunisian cinema</a></div>
+</div>                    </div>
+                </div>
+
+                
+                <div class="jeg_footer_secondary clearfix">
+                    <div class="footer_center">
+                        <p class="copyright"> </p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.footer -->        </div>
+
+        <!-- ================================
+             🔼 Scroll-to-top optimisé
+        ================================= -->
+        <div class="jscroll-to-top">
+            <a href="#back-to-top" class="jscroll-to-top_link" aria-label="Scroll to top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation
+    ============================================= -->
+<div id="jeg_off_canvas" class="normal">
+    <a href="#" class="jeg_menu_close"><i class="jegicon-cross"></i></a>
+    <div class="jeg_bg_overlay"></div>
+    <div class="jeg_mobile_wrapper">
+        <div class="nav_wrap">
+    <div class="item_main">
+          <img class="logo_menu_side_bar"src="https://webdo.tn/en/wp-content/uploads/2025/09/Webdo-Tunisie-2.webp" alt="Logo Webdo" width="180">
+        <!-- Search Form -->
+<div class="jeg_aside_item jeg_search_wrapper jeg_search_no_expand round">
+    <a href="#" class="jeg_search_toggle"><i class="fa fa-search"></i></a>
+    <form action="https://webdo.tn/en/" method="get" class="jeg_search_form" target="_top">
+    <input name="s" class="jeg_search_input" placeholder="Search..." type="text" value="" autocomplete="off">
+    <button aria-label="Search Button" type="submit" class="jeg_search_button btn"><i class="fa fa-search"></i></button>
+</form>
+<!-- jeg_search_hide with_result no_result -->
+<div class="jeg_search_result jeg_search_hide with_result">
+    <div class="search-result-wrapper">
+    </div>
+    <div class="search-link search-noresult">
+        No Result    </div>
+    <div class="search-link search-all-button">
+        <i class="fa fa-search"></i> View All Result    </div>
+</div></div><div class="jeg_aside_item">
+    <ul class="jeg_mobile_menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-232723"><a href="https://webdo.tn/en/">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-379358"><a href="https://webdo.tn/en/actualites/national/">National</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379357"><a href="https://webdo.tn/en/actualites/international/">international</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379359"><a href="https://webdo.tn/en/actualites/regions/">Regions</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379360"><a href="https://webdo.tn/en/actualites/sport/">Sport</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379356"><a href="https://webdo.tn/en/actualites/culture/">Culture</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-379361"><a href="https://webdo.tn/en/actualites/various/">Others</a></li>
+</ul></div>    </div>
+    <div class="item_bottom">
+        <div class="jeg_aside_item socials_widget nobg">
+    <a href="https://www.facebook.com/webdo.tn" target='_blank' rel='external noopener nofollow' class="jeg_facebook"><i class="fa fa-facebook"></i> </a><a href="https://x.com/webdo_tn" target='_blank' rel='external noopener nofollow' class="jeg_twitter"><i class="fa fa-twitter"></i> </a><a href="https://www.youtube.com/@webdoofficiel" target='_blank' rel='external noopener nofollow' class="jeg_youtube"><i class="fa fa-youtube-play"></i> </a><a href="https://webdo.tn/en/rss" target='_blank' rel='external noopener nofollow' class="jeg_rss"><i class="fa fa-rss"></i> </a></div><div class="jeg_aside_item jeg_aside_copyright">
+	<p></p>
+</div>    </div>
+</div>    </div>
+</div><script type="rocketlazyloadscript" data-rocket-type="text/javascript">var jfla = []</script><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/en/*"},{"not":{"href_matches":["/en/wp-*.php","/en/wp-admin/*","/en/wp-content/uploads/*","/en/wp-content/*","/en/wp-content/plugins/*","/en/wp-content/themes/webdo/*","/en/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div class="jeg_read_progress_wrapper"></div><script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"/en(/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$))|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://webdo.tn/en","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-extra">
+/* <![CDATA[ */
+var rocket_lazyload_css_data = {"threshold":"300"};
+//# sourceURL=rocket_lazyload_css-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-after">
+/* <![CDATA[ */
+!function o(n,c,a){function s(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(u)return u(t,!0);throw(r=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",r}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return s(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var u="function"==typeof require&&require,e=0;e<a.length;e++)s(a[e]);return s}({1:[function(e,t,r){"use strict";!function(){const r="undefined"==typeof rocket_pairs?[]:rocket_pairs,e="undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs;e.map(t=>{var e=t.selector;const r=document.querySelectorAll(e);r.forEach(e=>{e.setAttribute("data-rocket-lazy-bg-".concat(t.hash),"excluded")})});const o=document.querySelector("#wpr-lazyload-bg-container");var t=rocket_lazyload_css_data.threshold||300;const n=new IntersectionObserver(e=>{e.forEach(t=>{if(t.isIntersecting){const e=r.filter(e=>t.target.matches(e.selector));e.map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,o.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{n.unobserve(e),e.setAttribute("data-rocket-lazy-bg-".concat(t.hash),"loaded")}))})}})},{rootMargin:t+"px"});function c(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&r.forEach(t=>{try{const e=document.querySelectorAll(t.selector);e.forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-".concat(t.hash))&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-".concat(t.hash))&&(n.observe(e),(t.elements||(t.elements=[])).push(e))})}catch(e){console.error(e)}})}c();const a=function(){const o=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType){const r=new o(t);return r.observe(e,{attributes:!0,childList:!0,subtree:!0}),r}}}();t=document.querySelector("body"),a(t,c)}()},{}]},{},[1]);
+//# sourceMappingURL=lazyload-css.min.js.map
+
+//# sourceURL=rocket_lazyload_css-js-after
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.7.0" id="isotope-js" defer></script>
+<script data-minify="1" type="text/javascript" src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/lazysizes.js?ver=1765353474" id="lazysizes-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/ls.bgset.js?ver=1765353474" id="bgset-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/superfish.js?ver=1765353474" id="superfish-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/theia-sticky-sidebar.js?ver=1765353474" id="theia-sticky-sidebar-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.waypoints.js?ver=1765353474" id="waypoint-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.scrollTo.js?ver=1765353474" id="scrollto-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.parallax.js?ver=1765353474" id="parallax-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.okayNav.js?ver=1765353474" id="okaynav-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.mousewheel.js?ver=1765353474" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/modernizr-custom.js?ver=1765353474" id="modernizr-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.smartresize.js?ver=1765353474" id="smartresize-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/chosen.jquery.js?ver=1765353474" id="chosen-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.magnific-popup.js?ver=1765353474" id="magnific-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.jnewsgif.js?ver=1765353474" id="jnews-gif-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.jsticky.js?ver=1765353474" id="jnews-sticky-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/themes/webdo/assets/js/jquery.transit.min.js?ver=10.1.0" id="jquery-transit-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/jquery.module.js?ver=1765353474" id="jnews-landing-module-js" defer></script>
+<script type="text/javascript" id="jnews-main-js-extra">
+/* <![CDATA[ */
+var jnewsoption = {"login_reload":"https://webdo.tn/en/actualite/national/the-school-that-kills-three-broken-lives-a-mourning-country/395325","popup_script":"magnific","single_gallery":"","ismobile":"","isie":"","sidefeed_ajax":"","language":"en_US","module_prefix":"jnews_module_ajax_","live_search":"1","postid":"395325","isblog":"1","admin_bar":"0","follow_video":"","follow_position":"top_right","rtl":"0","gif":"","lang":{"invalid_recaptcha":"Invalid Recaptcha!","empty_username":"Please enter your username!","empty_email":"Please enter your email!","empty_password":"Please enter your password!"},"recaptcha":"0","site_slug":"/","site_domain":"webdo.tn","zoom_button":"0"};
+//# sourceURL=jnews-main-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/main.js?ver=1765353474" id="jnews-main-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/zoom-button.js?ver=1765353474" id="jnews-zoom-button-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/popup-post.js?ver=1765353474" id="jnews-popup-post-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/themes/webdo/assets/js/darkmode.js?ver=1765353474" id="jnews-darkmode-js" defer></script>
+<script type="text/javascript" id="webdoslide-frontend-js-extra">
+/* <![CDATA[ */
+var webdoslideAjax = {"ajaxurl":"https://webdo.tn/en/wp-admin/admin-ajax.php","nonce":"997c51f557"};
+//# sourceURL=webdoslide-frontend-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/cache/min/1/en/wp-content/plugins/webdo-slide-itrend/assets/js/frontend.js?ver=1765353474" id="webdoslide-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://webdo.tn/en/wp-content/plugins/wp-rocket/assets/js/heartbeat.js?ver=3.15.9" id="heartbeat-js" defer></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://webdo.tn/en/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://webdo.tn/en/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+<div class="jeg_ad jnews_mobile_sticky_ads "></div><script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/webdo.tn\/en\/actualite\/national\/the-school-that-kills-three-broken-lives-a-mourning-country\/395325\/"},"dateCreated":"2025-04-15 10:08:00","datePublished":"2025-04-15 10:08:00","dateModified":"2025-04-15 09:08:00","url":"https:\/\/webdo.tn\/en\/actualite\/national\/the-school-that-kills-three-broken-lives-a-mourning-country\/395325\/","headline":"The school that kills, three broken lives, a mourning country!","name":"The school that kills, three broken lives, a mourning country!","articleBody":"<div>\n\t\t\t\t\t\t\t\t<p>The drama that occurred in Mazzouna, where three high school students died after the collapse of a dilapidated wall, reveals the alarming state of school infrastructure in Tunisia. While more than 4,500 establishments require urgent work, the federation of secondary education calls for a day of mourning and protest, accusing the state of abandonment and irresponsibility. A tragic symbol of the collapse of an essential public service.<\/p>\n<p>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThree dead. Three barely major students, crushed by a lizarded wall in a high school in Mazzouna. This drama is not an isolated tragedy, it is the silent cry of a ruined school, of an abandoned system, of a sacrificed youth.<\/p>\n<p>This Tuesday, April 15, the courses are suspended in all high schools and colleges in the country. A collective judgment, a national mourning at the call of the General Federation of Secondary Education. But this suspension goes beyond homage: it is an accusation. A reporting on the chronic disengagement of the authorities, of their inaction in the face of the alarming degradation of school infrastructure, of their inability to guarantee a fundamental right: to learn in security.<\/p>\n<p>In Mazzouna, it was not the winds or earthquakes that killed these children. These are forty years of negligence. These are walls built in 1983, never renovated, never monitored. And these are above all ignored warnings: in 2022 already, the Court of Auditors alerted to the existence of 1,300 establishments with \"real structural risk\". Nothing has been done.<\/p>\n<p>The President of the Republic, Kais Saied, expressed his pain and ordered the opening of an investigation, demanding a national audit of schools and sanctions. It would take more than an audit to give the public school its dignity. You need a rescue plan. It takes a clear, structured, constant political will. Above all, it is necessary to end DIY.<\/p>\n<p>Because the figures are freezing: 4,500 out of 6102 establishments require urgent interventions. Thousands of students study in buildings without water, without electricity, sometimes even without fences. In rural regions, going to school becomes a physical, moral, sometimes fatal test.<\/p>\n<p>The Ministry of Education is not innocent. His chief, Noureddine Nouri, visited Sidi Bouzid a week before the drama, without seeing - or without denouncing - the state of dilapidation of the place. Last November, he promised renovations as part of a budget, however increasing. Promises that have remained a dead letter, as too often.<\/p>\n<p>What happened in Mazzouna is more than an accident. It is an alarm signal, a breaking point. Tunisian school is in danger. She no longer needs discourse or diagnostics. She needs acts, concrete renovations, a reinvention of the educational public service. And she needs, above all, that we stop waiting for other children to die to wake up.<\/p>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<\/div>\r\n","author":{"@type":"Person","name":"Webdo","url":"https:\/\/webdo.tn\/en\/actualite\/author\/webdo\/"},"articleSection":["National"],"image":{"@type":"ImageObject","url":"https:\/\/webdo.tn\/en\/wp-content\/uploads\/2025\/08\/b7cb4f1b924f993d4f77fe9aacc4ca15.webp.webp","width":720,"height":384},"publisher":{"@type":"Organization","name":"","url":"https:\/\/webdo.tn\/en","logo":{"@type":"ImageObject","url":""},"sameAs":["https:\/\/www.facebook.com\/webdo.tn","https:\/\/x.com\/webdo_tn","https:\/\/www.youtube.com\/@webdoofficiel","https:\/\/webdo.tn\/en\/rss"]}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"hentry","entry-title":"The school that kills, three broken lives, a mourning country!","published":"2025-04-15 10:08:00","updated":"2025-04-15 09:08:00"}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/webdo.tn\/en","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/webdo.tn\/en\/actualites\/national\/","name":"National"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/webdo.tn\/en","name":"Home"}},{"@type":"ListItem","position":4,"item":{"@id":"https:\/\/webdo.tn\/en\/actualites\/national\/","name":"National"}}]}</script>
+<style id="jeg_dynamic_css" type="text/css" data-type="jeg_custom-css">body { --j-body-color : #202020; --j-accent-color : #61c419; --j-alt-color : #61c419; --j-heading-color : #0a0a0a; } body,.jeg_newsfeed_list .tns-outer .tns-controls button,.jeg_filter_button,.owl-carousel .owl-nav div,.jeg_readmore,.jeg_hero_style_7 .jeg_post_meta a,.widget_calendar thead th,.widget_calendar tfoot a,.jeg_socialcounter a,.entry-header .jeg_meta_like a,.entry-header .jeg_meta_comment a,.entry-content tbody tr:hover,.entry-content th,.jeg_splitpost_nav li:hover a,#breadcrumbs a,.jeg_author_socials a:hover,.jeg_footer_content a,.jeg_footer_bottom a,.jeg_cartcontent,.woocommerce .woocommerce-breadcrumb a { color : #202020; } a, .jeg_menu_style_5>li>a:hover, .jeg_menu_style_5>li.sfHover>a, .jeg_menu_style_5>li.current-menu-item>a, .jeg_menu_style_5>li.current-menu-ancestor>a, .jeg_navbar .jeg_menu:not(.jeg_main_menu)>li>a:hover, .jeg_midbar .jeg_menu:not(.jeg_main_menu)>li>a:hover, .jeg_side_tabs li.active, .jeg_block_heading_5 strong, .jeg_block_heading_6 strong, .jeg_block_heading_7 strong, .jeg_block_heading_8 strong, .jeg_subcat_list li a:hover, .jeg_subcat_list li button:hover, .jeg_pl_lg_7 .jeg_thumb .jeg_post_category a, .jeg_pl_xs_2:before, .jeg_pl_xs_4 .jeg_postblock_content:before, .jeg_postblock .jeg_post_title a:hover, .jeg_hero_style_6 .jeg_post_title a:hover, .jeg_sidefeed .jeg_pl_xs_3 .jeg_post_title a:hover, .widget_jnews_popular .jeg_post_title a:hover, .jeg_meta_author a, .widget_archive li a:hover, .widget_pages li a:hover, .widget_meta li a:hover, .widget_recent_entries li a:hover, .widget_rss li a:hover, .widget_rss cite, .widget_categories li a:hover, .widget_categories li.current-cat>a, #breadcrumbs a:hover, .jeg_share_count .counts, .commentlist .bypostauthor>.comment-body>.comment-author>.fn, span.required, .jeg_review_title, .bestprice .price, .authorlink a:hover, .jeg_vertical_playlist .jeg_video_playlist_play_icon, .jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail:before, .jeg_horizontal_playlist .jeg_video_playlist_play, .woocommerce li.product .pricegroup .button, .widget_display_forums li a:hover, .widget_display_topics li:before, .widget_display_replies li:before, .widget_display_views li:before, .bbp-breadcrumb a:hover, .jeg_mobile_menu li.sfHover>a, .jeg_mobile_menu li a:hover, .split-template-6 .pagenum, .jeg_mobile_menu_style_5>li>a:hover, .jeg_mobile_menu_style_5>li.sfHover>a, .jeg_mobile_menu_style_5>li.current-menu-item>a, .jeg_mobile_menu_style_5>li.current-menu-ancestor>a { color : #61c419; } .jeg_menu_style_1>li>a:before, .jeg_menu_style_2>li>a:before, .jeg_menu_style_3>li>a:before, .jeg_side_toggle, .jeg_slide_caption .jeg_post_category a, .jeg_slider_type_1_wrapper .tns-controls button.tns-next, .jeg_block_heading_1 .jeg_block_title span, .jeg_block_heading_2 .jeg_block_title span, .jeg_block_heading_3, .jeg_block_heading_4 .jeg_block_title span, .jeg_block_heading_6:after, .jeg_pl_lg_box .jeg_post_category a, .jeg_pl_md_box .jeg_post_category a, .jeg_readmore:hover, .jeg_thumb .jeg_post_category a, .jeg_block_loadmore a:hover, .jeg_postblock.alt .jeg_block_loadmore a:hover, .jeg_block_loadmore a.active, .jeg_postblock_carousel_2 .jeg_post_category a, .jeg_heroblock .jeg_post_category a, .jeg_pagenav_1 .page_number.active, .jeg_pagenav_1 .page_number.active:hover, input[type="submit"], .btn, .button, .widget_tag_cloud a:hover, .popularpost_item:hover .jeg_post_title a:before, .jeg_splitpost_4 .page_nav, .jeg_splitpost_5 .page_nav, .jeg_post_via a:hover, .jeg_post_source a:hover, .jeg_post_tags a:hover, .comment-reply-title small a:before, .comment-reply-title small a:after, .jeg_storelist .productlink, .authorlink li.active a:before, .jeg_footer.dark .socials_widget:not(.nobg) a:hover .fa, div.jeg_breakingnews_title, .jeg_overlay_slider_bottom_wrapper .tns-controls button, .jeg_overlay_slider_bottom_wrapper .tns-controls button:hover, .jeg_vertical_playlist .jeg_video_playlist_current, .woocommerce span.onsale, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .jeg_popup_post .caption, .jeg_footer.dark input[type="submit"], .jeg_footer.dark .btn, .jeg_footer.dark .button, .footer_widget.widget_tag_cloud a:hover, .jeg_inner_content .content-inner .jeg_post_category a:hover, #buddypress .standard-form button, #buddypress a.button, #buddypress input[type="submit"], #buddypress input[type="button"], #buddypress input[type="reset"], #buddypress ul.button-nav li a, #buddypress .generic-button a, #buddypress .generic-button button, #buddypress .comment-reply-link, #buddypress a.bp-title-button, #buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a, div#buddypress .standard-form button:hover, div#buddypress a.button:hover, div#buddypress input[type="submit"]:hover, div#buddypress input[type="button"]:hover, div#buddypress input[type="reset"]:hover, div#buddypress ul.button-nav li a:hover, div#buddypress .generic-button a:hover, div#buddypress .generic-button button:hover, div#buddypress .comment-reply-link:hover, div#buddypress a.bp-title-button:hover, div#buddypress.buddypress-wrap .members-list li .user-update .activity-read-more a:hover, #buddypress #item-nav .item-list-tabs ul li a:before, .jeg_inner_content .jeg_meta_container .follow-wrapper a { background-color : #61c419; } .jeg_block_heading_7 .jeg_block_title span, .jeg_readmore:hover, .jeg_block_loadmore a:hover, .jeg_block_loadmore a.active, .jeg_pagenav_1 .page_number.active, .jeg_pagenav_1 .page_number.active:hover, .jeg_pagenav_3 .page_number:hover, .jeg_prevnext_post a:hover h3, .jeg_overlay_slider .jeg_post_category, .jeg_sidefeed .jeg_post.active, .jeg_vertical_playlist.jeg_vertical_playlist .jeg_video_playlist_item.active .jeg_video_playlist_thumbnail img, .jeg_horizontal_playlist .jeg_video_playlist_item.active { border-color : #61c419; } .jeg_tabpost_nav li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .jeg_mobile_menu_style_1>li.current-menu-item a, .jeg_mobile_menu_style_1>li.current-menu-ancestor a, .jeg_mobile_menu_style_2>li.current-menu-item::after, .jeg_mobile_menu_style_2>li.current-menu-ancestor::after, .jeg_mobile_menu_style_3>li.current-menu-item::before, .jeg_mobile_menu_style_3>li.current-menu-ancestor::before { border-bottom-color : #61c419; } .jeg_post_meta .fa, .entry-header .jeg_post_meta .fa, .jeg_review_stars, .jeg_price_review_list { color : #61c419; } .jeg_share_button.share-float.share-monocrhome a { background-color : #61c419; } h1,h2,h3,h4,h5,h6,.jeg_post_title a,.entry-header .jeg_post_title,.jeg_hero_style_7 .jeg_post_title a,.jeg_block_title,.jeg_splitpost_bar .current_title,.jeg_video_playlist_title,.gallery-caption,.jeg_push_notification_button>a.button { color : #0a0a0a; } .split-template-9 .pagenum, .split-template-10 .pagenum, .split-template-11 .pagenum, .split-template-12 .pagenum, .split-template-13 .pagenum, .split-template-15 .pagenum, .split-template-18 .pagenum, .split-template-20 .pagenum, .split-template-19 .current_title span, .split-template-20 .current_title span { background-color : #0a0a0a; } .jeg_header .jeg_bottombar, .jeg_header .jeg_bottombar.jeg_navbar_dark, .jeg_bottombar.jeg_navbar_boxed .jeg_nav_row, .jeg_bottombar.jeg_navbar_dark.jeg_navbar_boxed .jeg_nav_row { border-top-width : 0px; } .jeg_header .socials_widget > a > i.fa:before { color : #f5f5f5; } .jeg_header .socials_widget.nobg > a > span.jeg-icon svg { fill : #f5f5f5; } .jeg_header .socials_widget > a > span.jeg-icon svg { fill : #f5f5f5; } body,input,textarea,select,.chosen-container-single .chosen-single,.btn,.button { font-family: Roboto,Helvetica,Arial,sans-serif; } .jeg_post_title, .entry-header .jeg_post_title, .jeg_single_tpl_2 .entry-header .jeg_post_title, .jeg_single_tpl_3 .entry-header .jeg_post_title, .jeg_single_tpl_6 .entry-header .jeg_post_title, .jeg_content .jeg_custom_title_wrapper .jeg_post_title { font-family: Roboto,Helvetica,Arial,sans-serif;font-weight : 400; font-style : normal;  } .jeg_post_excerpt p, .content-inner p { font-family: Roboto,Helvetica,Arial,sans-serif;font-weight : 400; font-style : normal;  } </style><script type="rocketlazyloadscript" data-rocket-type="text/javascript">;!function(){"use strict";window.jnews=window.jnews||{},window.jnews.first_load=window.jnews.first_load||{},window.jnews.first_load=function(){var e=this,t=jnews.library,n="object"==typeof jnews&&"object"==typeof jnews.library;e.data=null,e.run_ajax=!0,e.run_loginregister=!0,e.clear=function(){e.run_ajax=!0,e.run_loginregister=!0,e.data=null},e.init=function(){n&&(t.globalBody.querySelectorAll(".jeg_popup_account").length&&jnews.loginregister&&e.run_loginregister&&(e.run_loginregister=!1,jnews.loginregister.init(),jnews.loginregister.hook_form()),jfla.length&&e.run_ajax&&(e.run_ajax=!1,e.do_ajax({action:"jnews_first_load_action",jnews_id:jnewsoption.postid,load_action:jfla})))},e.update_counter=function(){if(n){var o={total_view:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_views_count .counts"),total_share:t.globalBody.querySelectorAll(".jeg_share_stats .jeg_share_count .counts"),total_comment:t.globalBody.querySelectorAll(".jeg_meta_comment a span")};t.forEach(e.data.counter,(function(e,n){o[n].length&&t.forEach(o[n],(function(n,o){t.setText(n,e)}))}))}},e.do_ajax=function(o){if(n){var a=new XMLHttpRequest;a.onreadystatechange=function(){XMLHttpRequest.DONE===a.readyState&&200==a.status&&(e.data=JSON.parse(a.responseText),e.data.counter&&"object"==typeof e.data.counter&&e.update_counter())},a.open("POST",jnews_ajax_url,!0),a.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),a.send(t.httpBuildQuery(o))}}},window.jnews.first_load=new window.jnews.first_load,jnews.first_load.init()}();</script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://webdo.tn/en/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<!-- ======================================================
+     ⚡ JS Optimisations Webdo Lite – Speed & Stability
+====================================================== -->
+
+<script type="rocketlazyloadscript">
+// 🌐 Optimise le rendu du menu mobile (INP + smoothness)
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenu = document.querySelector('.jeg_navbar_mobile_wrapper');
+    if (mobileMenu) mobileMenu.style.willChange = 'transform';
+});
+
+// ➕ Evite flicker de la page après les scripts
+window.addEventListener('load', function(){
+    document.body.classList.add('page-loaded');
+});
+</script>
+
+<!-- ======================================================
+     🔥 Anti-bugs LazySizes (évite reflows tardifs JNews)
+====================================================== -->
+<script type="rocketlazyloadscript">
+// Empêche LazySizes de modifier l’image LCP
+document.addEventListener('lazybeforeunveil', function(e){
+    if (e.target.classList && e.target.classList.contains('webdo-lcp')) {
+        e.stopPropagation();
+    }
+}, true);
+
+// Empêche LazySizes d'ajouter lazyloaded trop tôt
+window.lazySizesConfig = window.lazySizesConfig || {};
+lazySizesConfig.preloadAfterLoad = true;
+lazySizesConfig.loadMode = 1;
+</script>
+
+<!-- ======================================================
+     🚀 GPT Ads Reload Safety — anti-CLS
+====================================================== -->
+<script type="rocketlazyloadscript">
+if (window.googletag && googletag.cmd) {
+    googletag.cmd.push(function() {
+        try {
+            googletag.pubads().refresh();
+        } catch(e){}
+    });
+}
+</script>
+
+<!-- ======================================================
+     ✨ Smooth Scroll – UX propre
+====================================================== -->
+<script type="rocketlazyloadscript">
+document.addEventListener('DOMContentLoaded', function(){
+    const btn = document.querySelector('.jscroll-to-top_link');
+    if(btn){
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+});
+</script>
+
+<!-- ======================================================
+     ⚡ InstantPage Lite – prefetch intelligent (EN only)
+====================================================== -->
+<script type="rocketlazyloadscript">
+// Précharge les liens visibles & bientôt cliqués (vitesse++ sans surcharge)
+document.addEventListener('mouseover', instantPrefetch);
+document.addEventListener('touchstart', instantPrefetch);
+
+function instantPrefetch(e){
+    const link = e.target.closest("a");
+    if(!link) return;
+    const url = link.href;
+
+    // Seulement interne
+    if(!url || !url.includes(window.location.host)) return;
+
+    const pr = document.createElement('link');
+    pr.rel = 'prefetch';
+    pr.href = url;
+    pr.fetchpriority = "low";
+    document.head.appendChild(pr);
+
+    // Ne pas préfetch plusieurs fois
+    document.removeEventListener('mouseover', instantPrefetch);
+    document.removeEventListener('touchstart', instantPrefetch);
+}
+</script>
+
+<!-- ======================================================
+     🔚 FIN FOOTER
+====================================================== -->
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"67f9e4d44f8b457c96aca34283247f37","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1768505564 -->

@@ -1,0 +1,470 @@
+{
+  "Sidi Bouzid": {
+    "aliases": [
+      "Sidi Bouzid",
+      "Sidi Bouzid Governorate",
+      "سيدي بوزيد",
+      "ولاية سيدي بوزيد"
+    ],
+    "related": [
+      "Mohamed Bouazizi",
+      "self-immolation",
+      "December 2010",
+      "2010 protests",
+      "regional marginalization"
+    ]
+  },
+
+  "Mohamed Bouazizi": {
+    "aliases": [
+      "Mohamed Bouazizi",
+      "Mohammed Bouazizi",
+      "Bouazizi",
+      "Mohamed el-Bouazizi",
+      "محمد البوعزيزي",
+      "محمد بو عزيزي",
+      "البوعزيزي"
+    ],
+    "related": [
+      "Sidi Bouzid",
+      "self-immolation",
+      "street vendor",
+      "December 2010",
+      "police harassment"
+    ]
+  },
+
+  "self-immolation": {
+    "aliases": [
+      "self-immolation",
+      "self immolation",
+      "immolation",
+      "set himself on fire",
+      "act of self-immolation",
+      "auto-immolation",
+      "suicide by fire",
+      "immolation par le feu",
+      "auto-immolation",
+      "إضرام النار في الجسد",
+      "أحرق نفسه",
+      "حرق نفسه"
+    ],
+    "related": [
+      "Mohamed Bouazizi",
+      "Sidi Bouzid",
+      "December 2010",
+      "trigger events"
+    ]
+  },
+
+  "December 2010": {
+    "aliases": [
+      "December 2010",
+      "2010 December",
+      "Dec 2010",
+      "décembre 2010",
+      "fin 2010",
+      "ديسمبر 2010"
+    ],
+    "related": [
+      "Sidi Bouzid",
+      "2010 protests",
+      "self-immolation"
+    ]
+  },
+
+  "2010 protests": {
+    "aliases": [
+      "2010 protests",
+      "protests 2010",
+      "uprising 2010",
+      "revolt 2010",
+      "protestations 2010",
+      "manifestations 2010",
+      "احتجاجات 2010",
+      "انتفاضة 2010"
+    ],
+    "related": [
+      "Sidi Bouzid",
+      "Ben Ali",
+      "police repression",
+      "youth testimonies",
+      "social media"
+    ]
+  },
+
+  "Ben Ali": {
+    "aliases": [
+      "Ben Ali",
+      "Zine El Abidine Ben Ali",
+      "Zine El-Abidine Ben Ali",
+      "Zine el-Abidine",
+      "زين العابدين بن علي",
+      "بن علي"
+    ],
+    "related": [
+      "RCD",
+      "police repression",
+      "January 14 2011",
+      "state media"
+    ]
+  },
+
+  "January 14 2011": {
+    "aliases": [
+      "January 14 2011",
+      "14 January 2011",
+      "14/01/2011",
+      "14 janvier 2011",
+      "14 Janvier 2011",
+      "14 جانفي 2011",
+      "14 يناير 2011"
+    ],
+    "related": [
+      "Ben Ali",
+      "Tunis",
+      "Kasbah sit-ins"
+    ]
+  },
+
+  "Kasbah": {
+    "aliases": [
+      "Kasbah",
+      "La Kasbah",
+      "Kasbah of Tunis",
+      "Place de la Kasbah",
+      "القصبة",
+      "ساحة القصبة"
+    ],
+    "related": [
+      "Kasbah sit-ins",
+      "protest camps",
+      "occupation",
+      "government resignations"
+    ]
+  },
+
+  "Kasbah sit-ins": {
+    "aliases": [
+      "Kasbah sit-ins",
+      "Kasbah sit-in",
+      "sit-in Kasbah",
+      "sit-in at the Kasbah",
+      "sit-in de la Kasbah",
+      "sit-ins de la Kasbah",
+      "اعتصام القصبة",
+      "اعتصامات القصبة"
+    ],
+    "related": [
+      "Kasbah",
+      "protest camps",
+      "occupation",
+      "UGTT"
+    ]
+  },
+
+  "protest camps": {
+    "aliases": [
+      "protest camp",
+      "protest camps",
+      "encampment",
+      "occupation camp",
+      "campement de protestation",
+      "campements",
+      "مخيم احتجاج",
+      "مخيمات احتجاج"
+    ],
+    "related": [
+      "sit-ins",
+      "Kasbah",
+      "occupation",
+      "public square"
+    ]
+  },
+
+  "sit-ins": {
+    "aliases": [
+      "sit-in",
+      "sit-ins",
+      "sitins",
+      "sit in",
+      "occupation",
+      "grève de la faim",
+      "sit-in de protestation",
+      "اعتصام",
+      "اعتصامات"
+    ],
+    "related": [
+      "protest camps",
+      "Kasbah sit-ins",
+      "occupation"
+    ]
+  },
+
+  "police repression": {
+    "aliases": [
+      "police repression",
+      "police violence",
+      "security forces",
+      "riot police",
+      "répression policière",
+      "violences policières",
+      "forces de l'ordre",
+      "قمع الشرطة",
+      "القوات الأمنية",
+      "عنف الشرطة"
+    ],
+    "related": [
+      "2010 protests",
+      "Ben Ali",
+      "martyrs and wounded"
+    ]
+  },
+
+  "RCD": {
+    "aliases": [
+      "RCD",
+      "Constitutional Democratic Rally",
+      "Rassemblement constitutionnel démocratique",
+      "Le RCD",
+      "التجمع الدستوري الديمقراطي"
+    ],
+    "related": [
+      "Ben Ali",
+      "old regime",
+      "political transition"
+    ]
+  },
+
+  "UGTT": {
+    "aliases": [
+      "UGTT",
+      "Union générale tunisienne du travail",
+      "Union Generale Tunisienne du Travail",
+      "الاتحاد العام التونسي للشغل",
+      "الاتحاد"
+    ],
+    "related": [
+      "Kasbah sit-ins",
+      "strikes",
+      "mobilization"
+    ]
+  },
+
+  "strikes": {
+    "aliases": [
+      "strike",
+      "strikes",
+      "general strike",
+      "grève",
+      "grèves",
+      "grève générale",
+      "إضراب",
+      "إضرابات",
+      "إضراب عام"
+    ],
+    "related": [
+      "UGTT",
+      "mobilization",
+      "2010 protests"
+    ]
+  },
+
+  "media slogans": {
+    "aliases": [
+      "media slogans",
+      "slogans",
+      "protest slogans",
+      "chants",
+      "chant",
+      "slogan",
+      "slogans médiatiques",
+      "chants de protestation",
+      "هتافات",
+      "شعارات",
+      "الهتافات",
+      "الشعارات",
+      "الشعب يريد",
+      "al-shaab yurid",
+      "al shaab yurid",
+      "ash-shaab yurid"
+    ],
+    "related": [
+      "chants",
+      "protest slogans",
+      "social media",
+      "state media"
+    ]
+  },
+
+  "social media": {
+    "aliases": [
+      "social media",
+      "Facebook",
+      "Twitter",
+      "YouTube",
+      "réseaux sociaux",
+      "médias sociaux",
+      "فيسبوك",
+      "تويتر",
+      "يوتيوب",
+      "وسائل التواصل الاجتماعي"
+    ],
+    "related": [
+      "media slogans",
+      "youth testimonies",
+      "mobilization"
+    ]
+  },
+
+  "youth testimonies": {
+    "aliases": [
+      "youth testimony",
+      "youth testimonies",
+      "testimony",
+      "testimonies",
+      "témoignages de jeunes",
+      "témoignage",
+      "témoignages",
+      "شهادة",
+      "شهادات",
+      "شهادات الشباب"
+    ],
+    "related": [
+      "oral histories",
+      "neighborhood stories",
+      "community narratives"
+    ]
+  },
+
+  "oral histories": {
+    "aliases": [
+      "oral histories",
+      "oral history",
+      "récits oraux",
+      "histoire orale",
+      "شهادات شفوية",
+      "تاريخ شفوي"
+    ],
+    "related": [
+      "youth testimonies",
+      "neighborhood stories",
+      "memory and narrative"
+    ]
+  },
+
+  "neighborhood stories": {
+    "aliases": [
+      "neighborhood stories",
+      "neighbourhood stories",
+      "local stories",
+      "community stories",
+      "récits de quartier",
+      "histoires locales",
+      "حكايات الحومة",
+      "قصص محلية",
+      "روايات محلية"
+    ],
+    "related": [
+      "youth testimonies",
+      "oral histories",
+      "community narratives"
+    ]
+  },
+
+  "martyrs and wounded": {
+    "aliases": [
+      "martyrs",
+      "wounded",
+      "victims",
+      "martyrs and wounded",
+      "شهداء",
+      "جرحى",
+      "ضحايا",
+      "شهداء وجرحى",
+      "martyrs de la révolution",
+      "blessés"
+    ],
+    "related": [
+      "police repression",
+      "January 14 2011",
+      "memory and narrative"
+    ]
+  },
+
+  "regional marginalization": {
+    "aliases": [
+      "regional marginalization",
+      "marginalization",
+      "economic exclusion",
+      "inland regions",
+      "marginalisation régionale",
+      "التهميش",
+      "التهميش الجهوي",
+      "الجهات الداخلية"
+    ],
+    "related": [
+      "Sidi Bouzid",
+      "2010 protests",
+      "youth testimonies"
+    ]
+  },
+
+  "state media": {
+    "aliases": [
+      "state media",
+      "national television",
+      "public broadcaster",
+      "médias d'État",
+      "télévision nationale",
+      "الإعلام الرسمي",
+      "التلفزة الوطنية"
+    ],
+    "related": [
+      "Ben Ali",
+      "media slogans",
+      "narrative framing"
+    ]
+  },
+
+  "memory and narrative": {
+    "aliases": [
+      "memory",
+      "collective memory",
+      "narrative",
+      "narratives",
+      "storytelling",
+      "mémoire",
+      "mémoire collective",
+      "récit",
+      "récits",
+      "narration",
+      "ذاكرة",
+      "الذاكرة الجماعية",
+      "سرد",
+      "سرديات"
+    ],
+    "related": [
+      "oral histories",
+      "martyrs and wounded",
+      "community narratives"
+    ]
+  },
+
+  "community narratives": {
+    "aliases": [
+      "community narratives",
+      "community narrative",
+      "local narratives",
+      "récits communautaires",
+      "récits locaux",
+      "سرديات مجتمعية",
+      "سرديات محلية"
+    ],
+    "related": [
+      "neighborhood stories",
+      "oral histories",
+      "memory and narrative"
+    ]
+  }
+}
