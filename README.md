@@ -1,4 +1,4 @@
-# Narratives Around the Tunisian Revolution (RAG)
+# Narratives Around the Tunisian Revolution (RAG) By Safwen Gharbi CI3/MR2 2026
 
 Streamlit + FastAPI app for searching and answering questions over a multilingual archive
 about the Tunisian Revolution. It ingests PDFs/HTML/TXT, builds a hybrid FAISS + BM25
@@ -41,13 +41,13 @@ index, then answers in Arabic, French, or English with citations and evaluation 
 Use a `.env` file (do not commit secrets). Common settings:
 
 ```bash
-RAG_LLM_PROVIDER=ollama            # ollama or groq
-RAG_LLM_MODEL=gemma3               # e.g., gemma3 or qwen/qwen3-32b
+RAG_LLM_PROVIDER=ollama           
+RAG_LLM_MODEL=gemma3               
 RAG_OLLAMA_URL=http://localhost:11434
 GROQ_API_KEY=your_key_here
-RAG_ALLOW_FOREIGN_SERVICES=0       # set 1 for Groq
+RAG_ALLOW_FOREIGN_SERVICES=0       
 RAG_LLM_TIMEOUT_S=60
-RAG_DOMAIN_SCORE_THRESHOLD=0.35    # optional override
+RAG_DOMAIN_SCORE_THRESHOLD=0.35    
 ```
 
 Notes:
@@ -77,8 +77,4 @@ For scanned PDFs, install these system tools and ensure they are on PATH:
 - `tesseract` with Arabic, French, and English language packs
 - `ghostscript` (gs or gswin64c on Windows)
 - `qpdf`
-
-## Troubleshooting
-- "Index not ingested": run `python src/ingest.py` and verify `data/index/` files exist.
-- "Embedding dim mismatch": rebuild the index using the same embedding model.
 
